@@ -3,18 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paria Amini | Timeline</title>
+  <title>Paria Amini | Portfolio</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: #0f111a;
       color: #e0e0e0;
+      scroll-behavior: smooth;
     }
 
+    nav {
+      position: sticky;
+      top: 0;
+      background: #1a1c2b;
+      padding: 1em;
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      z-index: 1000;
+      box-shadow: 0 2px 5px #000;
+    }
+
+    nav a {
+      color: #00ffe7;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff00c8;
+    }
+
+    section {
+      padding: 4em 2em;
+      min-height: 100vh;
+    }
+
+    /* Timeline styles */
     .timeline-container {
       position: relative;
-      padding: 4em 2em;
       overflow-x: auto;
       white-space: nowrap;
     }
@@ -71,42 +100,63 @@
       text-align: center;
       font-family: 'Orbitron', sans-serif;
       color: #ff00c8;
-      margin-top: 2em;
+      margin-bottom: 2em;
     }
   </style>
 </head>
 <body>
 
-  <h2>Project Timeline</h2>
-  <div class="timeline-container">
-    <div class="timeline-line"></div>
+  <!-- 🔗 Navigation Tabs -->
+  <nav>
+    <a href="#timeline">Timeline</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <div class="timeline-item">
-      <div class="timeline-link-line"></div>
-      <a href="projects/project1.html">
-        <img src="images/project1.jpg" alt="Project 1" />
-      </a>
-      <div class="timeline-date">Jan 2023</div>
+  <!-- 🕒 Timeline Section -->
+  <section id="timeline">
+    <h2>Project Timeline</h2>
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+
+      <div class="timeline-item">
+        <div class="timeline-link-line"></div>
+        <a href="projects/project1.html">
+          <img src="images/project1.jpg" alt="Project 1" />
+        </a>
+        <div class="timeline-date">Jan 2023</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-link-line"></div>
+        <a href="projects/project2.html">
+          <img src="images/project2.jpg" alt="Project 2" />
+        </a>
+        <div class="timeline-date">Jul 2023</div>
+      </div>
+
+      <!-- Add more items as needed -->
     </div>
+  </section>
 
-    <div class="timeline-item">
-      <div class="timeline-link-line"></div>
-      <a href="projects/project2.html">
-        <img src="images/project2.jpg" alt="Project 2" />
-      </a>
-      <div class="timeline-date">Jul 2023</div>
-    </div>
+  <!-- 👤 About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Write a short bio here. Who you are, what you do, what inspires you.</p>
+  </section>
 
-    <div class="timeline-item">
-      <div class="timeline-link-line"></div>
-      <a href="projects/project3.html">
-        <img src="images/project3.jpg" alt="Project 3" />
-      </a>
-      <div class="timeline-date">Feb 2024</div>
-    </div>
+  <!-- 🧪 Projects Section -->
+  <section id="projects">
+    <h2>Other Projects</h2>
+    <p>Highlight additional work or categories not shown in the timeline.</p>
+  </section>
 
-    <!-- Add more timeline items as needed -->
-  </div>
+  <!-- 📬 Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: paria@example.com<br>Instagram: @paria.designs</p>
+  </section>
 
 </body>
 </html>
