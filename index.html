@@ -4,79 +4,114 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Paria Amini | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f9fb;
-      color: #333;
+      font-family: 'Roboto', sans-serif;
+      background: #0f111a;
+      color: #e0e0e0;
     }
+
     nav {
-      background: #0c2340;
-      padding: 1em;
+      background: #1a1f2b;
+      padding: 1em 2em;
       display: flex;
-      justify-content: space-around;
-      color: white;
+      justify-content: center;
+      gap: 2em;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
+
     nav a {
-      color: white;
+      color: #00ffe7;
       text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
       font-weight: bold;
-      position: relative;
-      transition: color 0.3s;
+      transition: color 0.3s ease;
     }
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-      width: 0;
-      height: 2px;
-      background-color: white;
-      transition: width 0.3s ease-in-out;
-    }
+
     nav a:hover {
-      color: #ffcc00;
+      color: #ff00c8;
     }
-    nav a:hover::after {
-      width: 100%;
-    }
+
     header {
-      padding: 3em 1em;
+      padding: 4em 1em;
       text-align: center;
-      background: #dde6ed;
+      background: linear-gradient(135deg, #1f2235, #2c2f4a);
+      border-bottom: 2px solid #00ffe7;
     }
+
     header h1 {
       margin: 0;
-      font-size: 2.5em;
+      font-size: 3em;
+      font-family: 'Orbitron', sans-serif;
+      color: #00ffe7;
     }
+
     header p {
-      font-size: 1.2em;
+      font-size: 1.3em;
+      color: #ccc;
     }
+
     .section {
-      padding: 2em 1em;
-      max-width: 800px;
+      padding: 3em 1em;
+      max-width: 900px;
       margin: auto;
     }
-    .timeline {
-      border-left: 3px solid #0c2340;
-      padding-left: 1em;
+
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: #ff00c8;
+      border-bottom: 1px solid #444;
+      padding-bottom: 0.5em;
+      margin-bottom: 1em;
     }
+
+    .timeline {
+      border-left: 3px solid #00ffe7;
+      padding-left: 1em;
+      animation: fadeIn 1s ease-in;
+    }
+
     .timeline-entry {
       margin-bottom: 2em;
+      transition: transform 0.3s ease;
     }
-    .timeline-entry h3 {
-      margin: 0;
+
+    .timeline-entry:hover {
+      transform: translateX(5px);
     }
-    .timeline-entry a {
-      color: #0c2340;
-      text-decoration: underline;
+
+    .timeline-entry h3 a {
+      color: #00ffe7;
+      text-decoration: none;
     }
+
+    .timeline-entry h3 a:hover {
+      text-shadow: 0 0 5px #00ffe7;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 1.5em;
+    }
+
+    li {
+      margin-bottom: 0.5em;
+    }
+
     footer {
       text-align: center;
       padding: 2em 0;
-      background: #0c2340;
-      color: white;
+      background: #1a1f2b;
+      color: #888;
+      font-size: 0.9em;
+      border-top: 2px solid #00ffe7;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -91,7 +126,7 @@
   <header id="home">
     <h1>Paria Amini</h1>
     <p>Computer Engineering Student</p>
-    <!-- insert blurb here -->
+    <p>Exploring the intersection of hardware and software to build the future.</p>
   </header>
 
   <section id="projects" class="section">
@@ -99,28 +134,27 @@
     <div class="timeline">
       <div class="timeline-entry">
         <h3><a href="projects/project1.html">Project Title 1</a></h3>
-        <p><!-- insert project short description here --></p>
+        <p>Brief description of what this project does and why it matters.</p>
       </div>
       <div class="timeline-entry">
-        <h3><a href="projects/project2.html">Project Title 2</a></h3>
-        <p><!-- insert project short description here --></p>
+        <h3><a href="projects/project2.html">Weeweooo</a></h3>
+        <p>A fun experimental project that explores sound synthesis and signal processing.</p>
       </div>
-      <!-- add more entries as needed -->
     </div>
   </section>
 
   <section id="upcoming" class="section">
     <h2>Upcoming Projects</h2>
     <ul>
-      <li><!-- insert upcoming project idea 1 --></li>
-      <li><!-- insert upcoming project idea 2 --></li>
-      <li><!-- insert upcoming project idea 3 --></li>
+      <li>AI-powered resume analyzer</li>
+      <li>Smart home automation dashboard</li>
+      <li>Interactive circuit simulator</li>
     </ul>
   </section>
 
   <section id="about" class="section">
     <h2>About Me</h2>
-    <p><!-- insert about me blurb here --></p>
+    <p>Hi! I'm Paria, a passionate computer engineering student with a love for embedded systems, futuristic tech, and creative problem-solving. I thrive on building things that bridge the digital and physical worlds.</p>
   </section>
 
   <footer>
