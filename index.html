@@ -11,6 +11,7 @@
       font-family: 'Roboto', sans-serif;
       background: #0f111a;
       color: #e0e0e0;
+      scroll-behavior: smooth;
     }
 
     nav {
@@ -68,36 +69,58 @@
     }
 
     .timeline {
-      border-left: 3px solid #00ffe7;
-      padding-left: 1em;
-      animation: fadeIn 1s ease-in;
+      margin-top: 2em;
+      position: relative;
+      overflow-x: auto;
+      white-space: nowrap;
     }
 
-    .timeline-entry {
-      margin-bottom: 2em;
-      transition: transform 0.3s ease;
+    .timeline-line {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: #00ffe7;
+      z-index: 0;
     }
 
-    .timeline-entry:hover {
-      transform: translateX(5px);
+    .timeline-item {
+      display: inline-block;
+      position: relative;
+      margin: 0 3em;
+      text-align: center;
+      z-index: 1;
     }
 
-    .timeline-entry h3 a {
-      color: #00ffe7;
-      text-decoration: none;
+    .timeline-item img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
 
-    .timeline-entry h3 a:hover {
-      text-shadow: 0 0 5px #00ffe7;
+    .timeline-item img:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 15px #00ffe7;
     }
 
-    ul {
-      list-style-type: square;
-      padding-left: 1.5em;
+    .timeline-date {
+      margin-top: 1em;
+      font-size: 0.9em;
+      color: #aaa;
     }
 
-    li {
-      margin-bottom: 0.5em;
+    .timeline-link-line {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 2px;
+      height: 50px;
+      background: #00ffe7;
+      transform: translate(-50%, -50%);
     }
 
     footer {
@@ -108,14 +131,10 @@
       font-size: 0.9em;
       border-top: 2px solid #00ffe7;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
   </style>
 </head>
 <body>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#projects">Projects</a>
@@ -131,15 +150,40 @@
 
   <section id="projects" class="section">
     <h2>Project Timeline</h2>
-    <div class="timeline">
-      <div class="timeline-entry">
-        <h3><a href="projects/project1.html">Project Title 1</a></h3>
+
+    <!-- 📝 Project Descriptions -->
+    <div>
+      <div>
+        <h3><a href="projects/project1.html" style="color:#00ffe7;">Project Title 1</a></h3>
         <p>Brief description of what this project does and why it matters.</p>
       </div>
-      <div class="timeline-entry">
-        <h3><a href="projects/project2.html">Weeweooo</a></h3>
+      <div>
+        <h3><a href="projects/project2.html" style="color:#00ffe7;">Weeweooo</a></h3>
         <p>A fun experimental project that explores sound synthesis and signal processing.</p>
       </div>
+    </div>
+
+    <!-- 🕒 Horizontal Timeline -->
+    <div class="timeline">
+      <div class="timeline-line"></div>
+
+      <div class="timeline-item">
+        <div class="timeline-link-line"></div>
+        <a href="projects/project1.html">
+          <img src="images/project1.jpg" alt="Project 1" />
+        </a>
+        <div class="timeline-date">Jan 2023</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-link-line"></div>
+        <a href="projects/project2.html">
+          <img src="images/project2.jpg" alt="Project 2" />
+        </a>
+        <div class="timeline-date">Jul 2023</div>
+      </div>
+
+      <!-- Add more timeline items here -->
     </div>
   </section>
 
@@ -160,5 +204,6 @@
   <footer>
     &copy; 2025 Paria Amini. All rights reserved.
   </footer>
+
 </body>
 </html>
