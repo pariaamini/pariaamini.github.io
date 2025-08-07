@@ -7,156 +7,124 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #0f111a;
-      color: #e0e0e0;
-      scroll-behavior: smooth;
+      font-family: Arial, sans-serif;
+      background: #f7f9fb;
+      color: #333;
     }
-
     nav {
-      position: sticky;
-      top: 0;
-      background: #1a1c2b;
+      background: #0c2340;
       padding: 1em;
       display: flex;
-      justify-content: center;
-      gap: 2em;
-      z-index: 1000;
-      box-shadow: 0 2px 5px #000;
+      justify-content: space-around;
+      color: white;
     }
-
     nav a {
-      color: #00ffe7;
+      color: white;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #ff00c8;
-    }
-
-    section {
-      padding: 4em 2em;
-      min-height: 100vh;
-    }
-
-    /* Timeline styles */
-    .timeline-container {
       position: relative;
-      overflow-x: auto;
-      white-space: nowrap;
+      transition: color 0.3s;
     }
-
-    .timeline-line {
+    nav a::after {
+      content: "";
       position: absolute;
-      top: 50%;
       left: 0;
-      right: 0;
-      height: 4px;
-      background: #00ffe7;
-      z-index: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background-color: white;
+      transition: width 0.3s ease-in-out;
     }
-
-    .timeline-item {
-      display: inline-block;
-      position: relative;
-      margin: 0 3em;
+    nav a:hover {
+      color: #ffcc00;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    header {
+      padding: 3em 1em;
       text-align: center;
-      z-index: 1;
+      background: #dde6ed;
     }
-
-    .timeline-item img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
     }
-
-    .timeline-item img:hover {
-      transform: scale(1.2);
-      box-shadow: 0 0 15px #00ffe7;
+    header p {
+      font-size: 1.2em;
     }
-
-    .timeline-date {
-      margin-top: 1em;
-      font-size: 0.9em;
-      color: #aaa;
+    .section {
+      padding: 2em 1em;
+      max-width: 800px;
+      margin: auto;
     }
-
-    .timeline-link-line {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 2px;
-      height: 50px;
-      background: #00ffe7;
-      transform: translate(-50%, -50%);
+    .timeline {
+      border-left: 3px solid #0c2340;
+      padding-left: 1em;
     }
-
-    h2 {
-      text-align: center;
-      font-family: 'Orbitron', sans-serif;
-      color: #ff00c8;
+    .timeline-entry {
       margin-bottom: 2em;
+    }
+    .timeline-entry h3 {
+      margin: 0;
+    }
+    .timeline-entry a {
+      color: #0c2340;
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 2em 0;
+      background: #0c2340;
+      color: white;
     }
   </style>
 </head>
 <body>
-
-  <!-- 🔗 Navigation Tabs -->
   <nav>
-    <a href="#timeline">Timeline</a>
-    <a href="#about">About</a>
+    <a href="#home">Home</a>
     <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <a href="#upcoming">Upcoming</a>
+    <a href="#about">About</a>
   </nav>
 
-  <!-- 🕒 Timeline Section -->
-  <section id="timeline">
+  <header id="home">
+    <h1>Paria Amini</h1>
+    <p>Computer Engineering Student</p>
+    <!-- insert blurb here -->
+  </header>
+
+  <section id="projects" class="section">
     <h2>Project Timeline</h2>
-    <div class="timeline-container">
-      <div class="timeline-line"></div>
-
-      <div class="timeline-item">
-        <div class="timeline-link-line"></div>
-        <a href="projects/project1.html">
-          <img src="images/project1.jpg" alt="Project 1" />
-        </a>
-        <div class="timeline-date">Jan 2023</div>
+    <div class="timeline">
+      <div class="timeline-entry">
+        <h3><a href="projects/project1.html">Project Title 1</a></h3>
+        <p><!-- insert project short description here --></p>
       </div>
-
-      <div class="timeline-item">
-        <div class="timeline-link-line"></div>
-        <a href="projects/project2.html">
-          <img src="images/project2.jpg" alt="Project 2" />
-        </a>
-        <div class="timeline-date">Jul 2023</div>
+      <div class="timeline-entry">
+        <h3><a href="projects/project2.html">Project Title 2</a></h3>
+        <p><!-- insert project short description here --></p>
       </div>
-
-      <!-- Add more items as needed -->
+      <!-- add more entries as needed -->
     </div>
   </section>
 
-  <!-- 👤 About Section -->
-  <section id="about">
+  <section id="upcoming" class="section">
+    <h2>Upcoming Projects</h2>
+    <ul>
+      <li><!-- insert upcoming project idea 1 --></li>
+      <li><!-- insert upcoming project idea 2 --></li>
+      <li><!-- insert upcoming project idea 3 --></li>
+    </ul>
+  </section>
+
+  <section id="about" class="section">
     <h2>About Me</h2>
-    <p>Write a short bio here. Who you are, what you do, what inspires you.</p>
+    <p><!-- insert about me blurb here --></p>
   </section>
 
-  <!-- 🧪 Projects Section -->
-  <section id="projects">
-    <h2>Other Projects</h2>
-    <p>Highlight additional work or categories not shown in the timeline.</p>
-  </section>
-
-  <!-- 📬 Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: paria@example.com<br>Instagram: @paria.designs</p>
-  </section>
-
+  <footer>
+    &copy; 2025 Paria Amini. All rights reserved.
+  </footer>
 </body>
 </html>
