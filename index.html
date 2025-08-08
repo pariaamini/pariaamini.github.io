@@ -1,157 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Paria Amini | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: #0f111a;
-      color: #e0e0e0;
-      scroll-behavior: smooth;
-      font-size: 18px;
+      font-family: Arial, sans-serif;
+      background: #f7f9fb;
+      color: #333;
     }
-
     nav {
-      background: #1a1f2b;
-      padding: 1em 2em;
+      background: #0c2340;
+      padding: 1em;
       display: flex;
-      justify-content: center;
-      gap: 2em;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      justify-content: space-around;
+      color: white;
     }
-
     nav a {
-      color: #00ffe7;
+      color: white;
       text-decoration: none;
-      font-family: 'Orbitron', sans-serif;
       font-weight: bold;
-      transition: color 0.3s ease;
+      position: relative;
+      transition: color 0.3s;
     }
-
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background-color: white;
+      transition: width 0.3s ease-in-out;
+    }
     nav a:hover {
-      color: #ff00c8;
+      color: #ffcc00;
     }
-
+    nav a:hover::after {
+      width: 100%;
+    }
     header {
-      padding: 4em 1em;
+      padding: 3em 1em;
       text-align: center;
-      background: linear-gradient(135deg, #1f2235, #2c2f4a);
-      border-bottom: 2px solid #00ffe7;
+      background: #dde6ed;
     }
-
     header h1 {
       margin: 0;
-      font-size: 3.5m;
-      font-family: 'Orbitron', sans-serif;
-      color: #00ffe7;
+      font-size: 2.5em;
     }
-
     header p {
-      font-size: 1.5em;
-      color: #ccc;
+      font-size: 1.2em;
     }
-
     .section {
-      padding: 3em 1em;
-      max-width: 900px;
+      padding: 2em 1em;
+      max-width: 800px;
       margin: auto;
     }
-
-    h2 {
-      /* font-family: 'Orbitron', sans-serif;
-      color: #ff00c8;
-      border-bottom: 1px solid #444;
-      padding-bottom: 0.5em;
-      margin-bottom: 1em; */
-
-      font-family: 'Orbitron', sans-serif;
-      color: #ff00c8;
-      text-align: center;
-      margin: 2em auto;
-      padding: 0.5em 1em;
-      border: 2px solid #ff00c8;
-      border-radius: 8px;
-      display: inline-block;
-      background-color: rgba(255, 0, 200, 0.05);
-      /* subtle glow effect */
-      box-shadow: 0 0 10px rgba(255, 0, 200, 0.3);
-
-    }
-
     .timeline {
-      margin-top: 2em;
-      position: relative;
-      overflow-x: auto;
-      white-space: nowrap;
+      border-left: 3px solid #0c2340;
+      padding-left: 1em;
     }
-
-    .timeline-line {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: #00ffe7;
-      z-index: 0;
+    .timeline-entry {
+      margin-bottom: 2em;
     }
-
-    .timeline-item {
-      display: inline-block;
-      position: relative;
-      margin: 0 4em;
-      text-align: center;
-      z-index: 1;
+    .timeline-entry h3 {
+      margin: 0;
     }
-
-    .timeline-item img {
-      width: 140px;
-      height: 140px;
-
-      object-fit: cover;
-      border-radius: 10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
+    .timeline-entry a {
+      color: #0c2340;
+      text-decoration: underline;
     }
-
-    .timeline-item img:hover {
-      transform: scale(1.2);
-      box-shadow: 0 0 15px #00ffe7;
-    }
-
-    .timeline-date {
-      margin-top: 1em;
-      font-size: 0.9em;
-      color: #aaa;
-    }
-
-    .timeline-link-line {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 2px;
-      height: 50px;
-      background: #00ffe7;
-      transform: translate(-50%, -50%);
-    }
-
     footer {
       text-align: center;
       padding: 2em 0;
-      background: #1a1f2b;
-      color: #888;
-      font-size: 0.9em;
-      border-top: 2px solid #00ffe7;
+      background: #0c2340;
+      color: white;
     }
   </style>
 </head>
-
 <body>
-
   <nav>
     <a href="#home">Home</a>
     <a href="#projects">Projects</a>
@@ -162,55 +91,40 @@
   <header id="home">
     <h1>Paria Amini</h1>
     <p>Computer Engineering Student</p>
-    <p>Exploring the intersection of hardware and software to build the future.</p>
+    <!-- insert blurb here -->
   </header>
 
   <section id="projects" class="section">
     <h2>Project Timeline</h2>
-
-    <!-- 🕒 Horizontal Timeline -->
     <div class="timeline">
-      <div class="timeline-line"></div>
-
-      <div class="timeline-item">
-        <div class="timeline-link-line"></div>
-        <a href="projects/project1.html">
-          <img src="images/thor.jpg" alt="Project 1" />
-        </a>
-        <div class="timeline-date">Jan 2023</div>
+      <div class="timeline-entry">
+        <h3><a href="projects/project1.html">Project Title 1</a></h3>
+        <p><!-- insert project short description here --></p>
       </div>
-
-      <div class="timeline-item">
-        <div class="timeline-link-line"></div>
-        <a href="projects/project2.html">
-          <img src="images/skud.jpg" alt="Project 2" />
-        </a>
-        <div class="timeline-date">Jul 2023</div>
+      <div class="timeline-entry">
+        <h3><a href="projects/project2.html">Project Title 2</a></h3>
+        <p><!-- insert project short description here --></p>
       </div>
-
-      <!-- Add more timeline items here -->
+      <!-- add more entries as needed -->
     </div>
   </section>
 
   <section id="upcoming" class="section">
     <h2>Upcoming Projects</h2>
     <ul>
-      <li>AI-powered resume analyzer</li>
-      <li>Smart home automation dashboard</li>
-      <li>Interactive circuit simulator</li>
+      <li><!-- insert upcoming project idea 1 --></li>
+      <li><!-- insert upcoming project idea 2 --></li>
+      <li><!-- insert upcoming project idea 3 --></li>
     </ul>
   </section>
 
   <section id="about" class="section">
     <h2>About Me</h2>
-    <p>Hi! I'm Paria, a passionate computer engineering student with a love for embedded systems, futuristic tech, and
-      creative problem-solving. I thrive on building things that bridge the digital and physical worlds.</p>
+    <p><!-- insert about me blurb here --></p>
   </section>
 
   <footer>
     &copy; 2025 Paria Amini. All rights reserved.
   </footer>
-
 </body>
-
 </html>
