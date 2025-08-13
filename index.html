@@ -107,6 +107,11 @@
       font-family: 'Orbitron', sans-serif;
       font-size: 0.9em;
     }
+    
+    .timeline-month {
+      display: block; /* Make month a block-level element for a new line */
+      font-size: 1.2em;
+    }
 
     ul {
       list-style-type: square;
@@ -149,22 +154,37 @@
   <section id="projects" class="section">
     <h2>Project Timeline</h2>
     <div class="timeline">
+
       <div class="timeline-entry">
-        <span class="timeline-date">January 2022</span>
-        <h3><a href="projects/frc2022.html">First Robotics 2022</a></h3>
+        <span class="timeline-date">
+            <span class="timeline-month">January</span> 2024
+        </span>
+        <h3><a href="projects/skills.html">Skills Robotics</a></h3>
+        <p>Brief description of what this project does and why it matters.</p>
+      </div>
+      <div>
+        <span class="timeline-date">
+            <span class="timeline-month">February</span> 2024
+        </span>
+        <h3><a href="projects/skills.html">Beep Robotics</a></h3>
         <p>Brief description of what this project does and why it matters.</p>
       </div>
       <div class="timeline-entry">
-        <span class="timeline-date">January 2023</span>
+        <span class="timeline-date">
+            <span class="timeline-month">October</span> 2023
+        </span>
         <h3><a href="projects/frc2023.html">First Robotics 2023</a></h3>
         <p>A fun experimental project that explores sound synthesis and signal processing.</p>
       </div>
       <div class="timeline-entry">
-        <span class="timeline-date">2024</span>
-        <h3><a href="projects/skills.html">Skills Robotics</a></h3>
+        <span class="timeline-date">
+            <span class="timeline-month">March</span> 2022
+        </span>
+        <h3><a href="projects/frc2022.html">First Robotics 2022</a></h3>
         <p>Brief description of what this project does and why it matters.</p>
       </div>
     </div>
+    
   </section>
 
   <section id="upcoming" class="section">
