@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,8 +11,6 @@
       font-family: 'Roboto', sans-serif;
       background: #0f111a;
       color: #e0e0e0;
-      scroll-behavior: smooth;
-      font-size: 18px;
     }
 
     nav {
@@ -22,7 +19,7 @@
       display: flex;
       justify-content: center;
       gap: 2em;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
 
     nav a {
@@ -46,13 +43,13 @@
 
     header h1 {
       margin: 0;
-      font-size: 3.5m;
+      font-size: 3em;
       font-family: 'Orbitron', sans-serif;
       color: #00ffe7;
     }
 
     header p {
-      font-size: 1.5em;
+      font-size: 1.3em;
       color: #ccc;
     }
 
@@ -71,59 +68,36 @@
     }
 
     .timeline {
-      margin-top: 2em;
-      position: relative;
-      overflow-x: auto;
-      white-space: nowrap;
+      border-left: 3px solid #00ffe7;
+      padding-left: 1em;
+      animation: fadeIn 1s ease-in;
     }
 
-    .timeline-line {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: #00ffe7;
-      z-index: 0;
+    .timeline-entry {
+      margin-bottom: 2em;
+      transition: transform 0.3s ease;
     }
 
-    .timeline-item {
-      display: inline-block;
-      position: relative;
-      margin: 0 4em;
-      text-align: center;
-      z-index: 1;
+    .timeline-entry:hover {
+      transform: translateX(5px);
     }
 
-    .timeline-item img {
-      width: 140px;
-      height: 140px;
-
-      object-fit: cover;
-      border-radius: 10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
+    .timeline-entry h3 a {
+      color: #00ffe7;
+      text-decoration: none;
     }
 
-    .timeline-item img:hover {
-      transform: scale(1.2);
-      box-shadow: 0 0 15px #00ffe7;
+    .timeline-entry h3 a:hover {
+      text-shadow: 0 0 5px #00ffe7;
     }
 
-    .timeline-date {
-      margin-top: 1em;
-      font-size: 0.9em;
-      color: #aaa;
+    ul {
+      list-style-type: square;
+      padding-left: 1.5em;
     }
 
-    .timeline-link-line {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 2px;
-      height: 50px;
-      background: #00ffe7;
-      transform: translate(-50%, -50%);
+    li {
+      margin-bottom: 0.5em;
     }
 
     footer {
@@ -134,11 +108,14 @@
       font-size: 0.9em;
       border-top: 2px solid #00ffe7;
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
-
 <body>
-
   <nav>
     <a href="#home">Home</a>
     <a href="#projects">Projects</a>
@@ -154,46 +131,34 @@
 
   <section id="projects" class="section">
     <h2>Project Timeline</h2>
-
-    <!-- 🕒 Vertical Timeline -->
     <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>Weeweooo</h3>
-          <p>A fun experimental project that explores sound synthesis and signal processing.</p>
-        </div>
+      <div class="timeline-entry">
+        <h3><a href="projects/project1.html">Project Title 1</a></h3>
+        <p>Brief description of what this project does and why it matters.</p>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>AI-powered resume analyzer</h3>
-          <p>Analyzes resumes using machine learning to match job descriptions.</p>
-        </div>
+      <div class="timeline-entry">
+        <h3><a href="projects/project2.html">Weeweooo</a></h3>
+        <p>A fun experimental project that explores sound synthesis and signal processing.</p>
       </div>
-      <!-- Add more timeline items as needed -->
     </div>
+  </section>
 
+  <section id="upcoming" class="section">
+    <h2>Upcoming Projects</h2>
+    <ul>
+      <li>AI-powered resume analyzer</li>
+      <li>Smart home automation dashboard</li>
+      <li>Interactive circuit simulator</li>
+    </ul>
+  </section>
 
-    <section id="upcoming" class="section">
-      <h2>Upcoming Projects</h2>
-      <ul>
-        <li>AI-powered resume analyzer</li>
-        <li>Smart home automation dashboard</li>
-        <li>Interactive circuit simulator</li>
-      </ul>
-    </section>
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>Hi! I'm Paria, a passionate computer engineering student with a love for embedded systems, futuristic tech, and creative problem-solving. I thrive on building things that bridge the digital and physical worlds.</p>
+  </section>
 
-    <section id="about" class="section">
-      <h2>About Me</h2>
-      <p>Hi! I'm Paria, a passionate computer engineering student with a love for embedded systems, futuristic tech, and
-        creative problem-solving. I thrive on building things that bridge the digital and physical worlds.</p>
-    </section>
-
-    <footer>
-      &copy; 2025 Paria Amini. All rights reserved.
-    </footer>
-
+  <footer>
+    &copy; 2025 Paria Amini. All rights reserved.
+  </footer>
 </body>
-
 </html>
