@@ -77,32 +77,46 @@
 
     /* Group projects by year */
     .timeline-year-group {
+      display: flex;
+      gap: 1em;
       margin-bottom: 3em;
       position: relative;
     }
     
     /* Style for the year heading */
-    .timeline-year-group h3 {
-      position: absolute;
-      left: -10em; /* Adjust to position correctly */
-      top: 0;
+    .timeline-year {
+      flex-shrink: 0; /* Prevents the year from shrinking */
       width: 8em;
       text-align: right;
       color: #ff00c8;
       font-family: 'Orbitron', sans-serif;
       font-size: 1.5em;
-      margin: 0;
+      margin-left: -10em;
     }
     
+    /* Container for the projects within a year */
+    .timeline-projects {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+      width: 100%;
+    }
+
     /* Container for each individual project */
     .timeline-entry {
-      margin-bottom: 2em;
       transition: transform 0.3s ease;
-      position: relative;
     }
 
     .timeline-entry:hover {
       transform: translateX(5px);
+    }
+
+    /* Style for the month */
+    .timeline-month {
+      font-family: 'Orbitron', sans-serif;
+      color: #ff00c8;
+      font-size: 1.2em;
+      margin-bottom: 0.5em;
     }
 
     .timeline-entry h4 {
@@ -114,19 +128,6 @@
     .timeline-entry h4 a {
       color: #00ffe7;
       text-decoration: none;
-    }
-    
-    /* Style for the month */
-    .timeline-month {
-      display: inline-block;
-      position: absolute;
-      left: -10em; /* Adjust to position correctly */
-      width: 8em;
-      text-align: right;
-      color: #ff00c8;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.2em;
-      top: -0.2em; /* Align with project title */
     }
 
     ul {
@@ -172,36 +173,42 @@
     <div class="timeline">
       <!-- Group for 2024 projects -->
       <div class="timeline-year-group">
-        <h3>2024</h3>
-        <div class="timeline-entry">
-          <span class="timeline-month">February</span>
-          <h4><a href="projects/skills.html">Skills Robotics</a></h4>
-          <p>Brief description of what this project does and why it matters.</p>
-        </div>
-        <div class="timeline-entry">
-          <span class="timeline-month">January</span>
-          <h4><a href="projects/beep.html">Beep Robotics</a></h4>
-          <p>Brief description of what this project does and why it matters.</p>
+        <h3 class="timeline-year">2024</h3>
+        <div class="timeline-projects">
+          <div class="timeline-entry">
+            <span class="timeline-month">February</span>
+            <h4><a href="projects/skills.html">Skills Robotics</a></h4>
+            <p>Brief description of what this project does and why it matters.</p>
+          </div>
+          <div class="timeline-entry">
+            <span class="timeline-month">January</span>
+            <h4><a href="projects/beep.html">Beep Robotics</a></h4>
+            <p>Brief description of what this project does and why it matters.</p>
+          </div>
         </div>
       </div>
       
       <!-- Group for 2023 projects -->
       <div class="timeline-year-group">
-        <h3>2023</h3>
-        <div class="timeline-entry">
-          <span class="timeline-month">October</span>
-          <h4><a href="projects/frc2023.html">First Robotics 2023</a></h4>
-          <p>A fun experimental project that explores sound synthesis and signal processing.</p>
+        <h3 class="timeline-year">2023</h3>
+        <div class="timeline-projects">
+          <div class="timeline-entry">
+            <span class="timeline-month">October</span>
+            <h4><a href="projects/frc2023.html">First Robotics 2023</a></h4>
+            <p>A fun experimental project that explores sound synthesis and signal processing.</p>
+          </div>
         </div>
       </div>
 
       <!-- Group for 2022 projects -->
       <div class="timeline-year-group">
-        <h3>2022</h3>
-        <div class="timeline-entry">
-          <span class="timeline-month">March</span>
-          <h4><a href="projects/frc2022.html">First Robotics 2022</a></h4>
-          <p>Brief description of what this project does and why it matters.</p>
+        <h3 class="timeline-year">2022</h3>
+        <div class="timeline-projects">
+          <div class="timeline-entry">
+            <span class="timeline-month">March</span>
+            <h4><a href="projects/frc2022.html">First Robotics 2022</a></h4>
+            <p>Brief description of what this project does and why it matters.</p>
+          </div>
         </div>
       </div>
     </div>
