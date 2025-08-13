@@ -77,12 +77,14 @@
 
     .timeline-entry {
       position: relative;
-      margin-bottom: 3em;
+      margin-bottom: 4em;
+      /* increased spacing */
       padding-left: 1em;
       border-left: 3px solid #00ffe7;
       transition: transform 0.3s ease;
+      min-height: 60px;
+      /* ensures enough height for the date */
     }
-
 
     .timeline-entry:hover {
       transform: translateX(5px);
@@ -97,7 +99,9 @@
       font-size: 1.1em;
       width: 80px;
       text-align: right;
+      line-height: 1.5;
     }
+
 
     .timeline-content {
       border-left: 3px solid #00ffe7;
