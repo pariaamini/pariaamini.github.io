@@ -70,16 +70,22 @@
     .timeline {
       border-left: 3px solid #00ffe7;
       padding-left: 1em;
+      position: relative; /* Added for positioning the date */
       animation: fadeIn 1s ease-in;
     }
 
     .timeline-entry {
       margin-bottom: 2em;
       transition: transform 0.3s ease;
+      position: relative; /* Added for positioning the date */
     }
 
     .timeline-entry:hover {
       transform: translateX(5px);
+    }
+
+    .timeline-entry h3 {
+      margin: 0;
     }
 
     .timeline-entry h3 a {
@@ -89,6 +95,17 @@
 
     .timeline-entry h3 a:hover {
       text-shadow: 0 0 5px #00ffe7;
+    }
+
+    .timeline-date {
+      position: absolute;
+      left: -10em; /* Adjust this value to position the date */
+      top: 0;
+      width: 8em; /* Set a fixed width for consistent alignment */
+      text-align: right; /* Align the date text to the right */
+      color: #ff00c8;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.9em;
     }
 
     ul {
@@ -133,14 +150,17 @@
     <h2>Project Timeline</h2>
     <div class="timeline">
       <div class="timeline-entry">
+        <span class="timeline-date">2022</span>
         <h3><a href="projects/frc2022.html">First Robotics 2022</a></h3>
         <p>Brief description of what this project does and why it matters.</p>
       </div>
       <div class="timeline-entry">
+        <span class="timeline-date">2023</span>
         <h3><a href="projects/frc2023.html">First Robotics 2023</a></h3>
         <p>A fun experimental project that explores sound synthesis and signal processing.</p>
       </div>
       <div class="timeline-entry">
+        <span class="timeline-date">2024</span>
         <h3><a href="projects/skills.html">Skills Robotics</a></h3>
         <p>Brief description of what this project does and why it matters.</p>
       </div>
