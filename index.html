@@ -67,21 +67,45 @@
       margin-bottom: 1em;
     }
 
+    /* Timeline container */
     .timeline {
       border-left: 3px solid #00ffe7;
       padding-left: 1em;
-      position: relative; /* Added for positioning the date */
+      position: relative;
       animation: fadeIn 1s ease-in;
     }
 
+    /* Container for each individual project */
     .timeline-entry {
       margin-bottom: 2em;
       transition: transform 0.3s ease;
-      position: relative; /* Added for positioning the date */
+      position: relative;
     }
 
     .timeline-entry:hover {
       transform: translateX(5px);
+    }
+
+    /* Style for the month and year */
+    .timeline-date {
+      position: absolute;
+      left: -10em; /* Adjust to position correctly */
+      top: 0;
+      width: 8em; /* Set a fixed width for consistent alignment */
+      text-align: right; /* Align the date text to the right */
+      color: #ff00c8;
+      font-family: 'Orbitron', sans-serif;
+    }
+    
+    .timeline-month {
+      display: block; /* Make month a block-level element for a new line */
+      font-size: 1.2em;
+    }
+
+    .timeline-year {
+      display: block;
+      font-size: 0.9em;
+      margin-top: 0.2em;
     }
 
     .timeline-entry h3 {
@@ -95,22 +119,6 @@
 
     .timeline-entry h3 a:hover {
       text-shadow: 0 0 5px #00ffe7;
-    }
-
-    .timeline-date {
-      position: absolute;
-      left: -10em; /* Adjust this value to position the date */
-      top: 0;
-      width: 8em; /* Set a fixed width for consistent alignment */
-      text-align: right; /* Align the date text to the right */
-      color: #ff00c8;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.9em;
-    }
-    
-    .timeline-month {
-      display: block; /* Make month a block-level element for a new line */
-      font-size: 1.2em;
     }
 
     ul {
@@ -157,7 +165,8 @@
 
       <div class="timeline-entry">
         <span class="timeline-date">
-            <span class="timeline-month">January</span> 2024
+            <span class="timeline-month">February</span>
+            <span class="timeline-year">2024</span>
         </span>
         <h3><a href="projects/skills.html">Skills Robotics</a></h3>
         <p>Brief description of what this project does and why it matters.</p>
@@ -165,7 +174,17 @@
 
       <div class="timeline-entry">
         <span class="timeline-date">
-            <span class="timeline-month">October</span> 2023
+            <span class="timeline-month">January</span>
+            <span class="timeline-year">2024</span>
+        </span>
+        <h3><a href="projects/beep.html">Beep Robotics</a></h3>
+        <p>Brief description of what this project does and why it matters.</p>
+      </div>
+      
+      <div class="timeline-entry">
+        <span class="timeline-date">
+            <span class="timeline-month">October</span>
+            <span class="timeline-year">2023</span>
         </span>
         <h3><a href="projects/frc2023.html">First Robotics 2023</a></h3>
         <p>A fun experimental project that explores sound synthesis and signal processing.</p>
@@ -173,7 +192,8 @@
 
       <div class="timeline-entry">
         <span class="timeline-date">
-            <span class="timeline-month">March</span> 2022
+            <span class="timeline-month">March</span>
+            <span class="timeline-year">2022</span>
         </span>
         <h3><a href="projects/frc2022.html">First Robotics 2022</a></h3>
         <p>Brief description of what this project does and why it matters.</p>
