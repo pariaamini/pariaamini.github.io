@@ -69,30 +69,34 @@
     }
 
     .timeline {
-      border-left: 3px solid #00ffe7;
-      padding-left: 1em;
-      animation: fadeIn 1s ease-in;
+      position: relative;
+      padding-left: 100px;
+      /* space for the date */
     }
 
+
     .timeline-entry {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 2em;
+      position: relative;
+      margin-bottom: 3em;
+      padding-left: 1em;
+      border-left: 3px solid #00ffe7;
       transition: transform 0.3s ease;
     }
+
 
     .timeline-entry:hover {
       transform: translateX(5px);
     }
 
     .timeline-date {
-      min-width: 80px;
+      position: absolute;
+      left: 0;
+      top: 0;
       font-family: 'Orbitron', sans-serif;
       color: #00ffe7;
       font-size: 1.1em;
-      margin-right: 1em;
+      width: 80px;
       text-align: right;
-      padding-top: 0.3em;
     }
 
     .timeline-content {
