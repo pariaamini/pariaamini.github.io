@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +20,7 @@
       display: flex;
       justify-content: center;
       gap: 2em;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     }
 
     nav a {
@@ -74,12 +75,29 @@
     }
 
     .timeline-entry {
+      display: flex;
+      align-items: flex-start;
       margin-bottom: 2em;
       transition: transform 0.3s ease;
     }
 
     .timeline-entry:hover {
       transform: translateX(5px);
+    }
+
+    .timeline-date {
+      min-width: 80px;
+      font-family: 'Orbitron', sans-serif;
+      color: #00ffe7;
+      font-size: 1.1em;
+      margin-right: 1em;
+      text-align: right;
+      padding-top: 0.3em;
+    }
+
+    .timeline-content {
+      border-left: 3px solid #00ffe7;
+      padding-left: 1em;
     }
 
     .timeline-entry h3 a {
@@ -110,11 +128,19 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
+
 <body>
   <nav>
     <a href="#home">Home</a>
@@ -126,7 +152,8 @@
   <header id="home">
     <h1>Paria Amini</h1>
     <p>Computer Engineering Student</p>
-    <p>Hi! This website is currently under stylistic review. All the information is still present, feel free to take a look :D</p>
+    <p>Hi! This website is currently under stylistic review. All the information is still present, feel free to take a
+      look :D</p>
   </header>
 
   <section id="projects" class="section">
@@ -138,19 +165,19 @@
           <h3><a href="projects/frc2022.html">First Robotics 2022</a></h3>
           <p>Brief description of what this project does and why it matters.</p>
         </div>
-      <div class="timeline-entry">
-        <div class="timeline-date">WEE</div>
-        <div class="timeline-content">       
-          <h3><a href="projects/frc2023.html">First Robotics 2023</a></h3>
-          <p>A fun experimental project that explores sound synthesis and signal processing.</p>
-        </div>
-      <div class="timeline-entry">
-        <div class="timeline-date">June 2023</div>
-        <div class="timeline-content">
-          <h3><a href="projects/skills.html">Skills Robotics</a></h3>
-          <p>Brief description of what this project does and why it matters.</p>
-      </div>
-    </div>
+        <div class="timeline-entry">
+          <div class="timeline-date">WEE</div>
+          <div class="timeline-content">
+            <h3><a href="projects/frc2023.html">First Robotics 2023</a></h3>
+            <p>A fun experimental project that explores sound synthesis and signal processing.</p>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-date">June 2023</div>
+            <div class="timeline-content">
+              <h3><a href="projects/skills.html">Skills Robotics</a></h3>
+              <p>Brief description of what this project does and why it matters.</p>
+            </div>
+          </div>
   </section>
 
 
@@ -173,11 +200,13 @@
 
   <section id="about" class="section">
     <h2>About Me</h2>
-    <p>Hi! I'm Paria, a passionate computer engineering student with a love for embedded systems, futuristic tech, and creative problem-solving. I thrive on building things that bridge the digital and physical worlds.</p>
+    <p>Hi! I'm Paria, a passionate computer engineering student with a love for embedded systems, futuristic tech, and
+      creative problem-solving. I thrive on building things that bridge the digital and physical worlds.</p>
   </section>
 
   <footer>
     &copy; 2025 Paria Amini. All rights reserved.
   </footer>
 </body>
+
 </html>
