@@ -54,7 +54,7 @@
     }
 
     .section {
-      padding: 1.5em 1em;
+      padding: 1.5em 1em; /* Reduced padding for smaller gaps */
       max-width: 900px;
       margin: auto;
     }
@@ -64,7 +64,7 @@
       color: #ff00c8;
       border-bottom: 1px solid #444;
       padding-bottom: 0.5em;
-      margin-bottom: 0.5em;
+      margin-bottom: 0.5em; /* Adjusted margin for closer text */
     }
 
     /* Timeline container */
@@ -121,6 +121,32 @@
       text-shadow: 0 0 5px #00ffe7;
     }
 
+    .project-image-container {
+      position: absolute;
+      right: -250px;
+      top: 0;
+      width: 200px;
+      height: auto;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .timeline-entry:hover .project-image-container {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .project-image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 255, 231, 0.4);
+      border: 2px solid #00ffe7;
+    }
+
     ul {
       list-style-type: square;
       padding-left: 1.5em;
@@ -159,12 +185,11 @@
     <li>Hi! This website is currently under construction. Will be finished by august 15th 2025, please check again soon!</li>
   </header>
 
-
   <section id="about" class="section">
     <h2>About Me</h2>
     <p>Hi! I'm Paria, a passionate computer engineering student with a love for embedded systems, futuristic tech, and creative problem-solving. I thrive on building things that bridge the digital and physical worlds.</p>
   </section>
-
+  
   <section id="projects" class="section">
     <h2>Project Timeline</h2>
     <div class="timeline">
@@ -177,6 +202,9 @@
         </span>
         <h3><a href="projects/eyetracker.html">Eye Tracker</a></h3>
         <p>Brief description of what this project does and why it matters.</p>
+        <div class="project-image-container">
+          <img src="https://placehold.co/400x200/ff00c8/000?text=Eye+Tracker+Image" alt="Eye Tracker Project Image">
+        </div>
       </div>
 
       <!-- frc 2024 -->
@@ -187,6 +215,9 @@
         </span>
         <h3><a href="projects/frc2024.html">First Robotics: Crescendo</a></h3>
         <p>Brief description of what this project does and why it matters.</p>
+        <div class="project-image-container">
+          <img src="images/skud.jpg" alt="First Robotics Crescendo Project Image">
+        </div>
       </div>
       <!-- skills -->
       <div class="timeline-entry">
@@ -196,6 +227,9 @@
         </span>
         <h3><a href="projects/skills.html">Alberta Skills Robotics</a></h3>
         <p>Brief description of what this project does and why it matters.</p>
+        <div class="project-image-container">
+          <img src="https://placehold.co/400x200/ff00c8/000?text=Skills+Robotics+Image" alt="Alberta Skills Robotics Project Image">
+        </div>
       </div>
       <!-- frc 2023 -->
       <div class="timeline-entry">
@@ -205,6 +239,9 @@
         </span>
         <h3><a href="projects/frc2023.html">First Robotics: Charged Up</a></h3>
         <p>Brief description of what this project does and why it matters.</p>
+        <div class="project-image-container">
+          <img src="images/thor.jpg" alt="First Robotics Charged Up Project Image">
+        </div>
       </div>
       <!-- frc 2022 -->
       <div class="timeline-entry">
@@ -214,6 +251,9 @@
         </span>
         <h3><a href="projects/frc2022.html">First Robotics: Rapid React</a></h3>
         <p>Brief description of what this project does and why it matters.</p>
+        <div class="project-image-container">
+          <img src="https://placehold.co/400x200/ff00c8/000?text=FRC+2022+Image" alt="First Robotics Rapid React Project Image">
+        </div>
       </div>
     </div>
     
