@@ -111,8 +111,9 @@
     /* Shared hover image container */
     .project-image-container {
       position: fixed;
-      top: 150px;
+      top: 50%;
       right: 50px;
+      transform: translateY(-50%);
       width: 300px;
       height: auto;
       visibility: hidden;
@@ -220,7 +221,7 @@
         <p>Brief description of what this project does and why it matters.</p>
       </div>
 
-      <div class="timeline-entry" data-image="images/frc2023.jpg">
+      <div class="timeline-entry" data-image="images/thor.jpg">
         <span class="timeline-date">
           <span class="timeline-month">March</span>
           <span class="timeline-year">2023</span>
@@ -229,7 +230,7 @@
         <p>Brief description of what this project does and why it matters.</p>
       </div>
 
-      <div class="timeline-entry" data-image="images/frc2022.jpg">
+      <div class="timeline-entry" data-image="images/snoopy.jpg">
         <span class="timeline-date">
           <span class="timeline-month">March</span>
           <span class="timeline-year">2022</span>
@@ -276,7 +277,8 @@
   document.addEventListener("DOMContentLoaded", function() {
     const imageContainer = document.getElementById("project-image-container");
     const imageElement = document.getElementById("project-image");
-    
+    let isHoveringTimeline = false;
+
     document.querySelectorAll(".timeline-entry").forEach(entry => {
       entry.addEventListener("mouseenter", () => {
         const imgSrc = entry.getAttribute("data-image");
@@ -284,13 +286,28 @@
           imageElement.src = imgSrc;
           imageContainer.style.visibility = "visible";
           imageContainer.style.opacity = "1";
+          isHoveringTimeline = true;
         }
       });
 
       entry.addEventListener("mouseleave", () => {
-        imageContainer.style.visibility = "hidden";
-        imageContainer.style.opacity = "0";
+        setTimeout(() => {
+          if (!isHoveringTimeline) {
+            imageContainer.style.visibility = "hidden";
+            imageContainer.style.opacity = "0";
+          }
+        }, 50);
       });
+    });
+
+    document.querySelector("#projects .timeline").addEventListener("mouseleave", () => {
+      isHoveringTimeline = false;
+      imageContainer.style.visibility = "hidden";
+      imageContainer.style.opacity = "0";
+    });
+
+    document.querySelector("#projects .timeline").addEventListener("mouseenter", () => {
+      isHoveringTimeline = true;
     });
   });
   </script>
