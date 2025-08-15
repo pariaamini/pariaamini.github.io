@@ -86,13 +86,13 @@
       transform: translateX(5px);
     }
 
-    /* Style for the month and year */
+    /* Desktop styles for dates */
     .timeline-date {
       position: absolute;
-      left: -10em; /* Adjust to position correctly */
+      left: -10em; /* Position to the left for desktop */
       top: 0;
-      width: 8em; /* Set a fixed width for consistent alignment */
-      text-align: right; /* Align the date text to the right */
+      width: 8em;
+      text-align: right;
       color: #ff00c8;
       font-family: 'Orbitron', sans-serif;
     }
@@ -106,19 +106,6 @@
       display: block;
       font-size: 0.9em;
       margin-top: 0.2em;
-    }
-
-    .timeline-entry h3 {
-      margin: 0;
-    }
-
-    .timeline-entry h3 a {
-      color: #00ffe7;
-      text-decoration: none;
-    }
-
-    .timeline-entry h3 a:hover {
-      text-shadow: 0 0 5px #00ffe7;
     }
 
     /* Styles for the hover image container */
@@ -169,6 +156,34 @@
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Mobile Styles: Dates now appear inside the timeline entry on top of the project title */
+    @media (max-width: 768px) {
+      .timeline-date {
+        position: static;
+        left: auto;
+        width: auto;
+        text-align: left;
+        margin-bottom: 0.5em;
+        display: block;
+      }
+      .timeline-year {
+        margin-top: 0;
+        display: inline;
+      }
+      .timeline-month {
+        display: inline;
+      }
+    }
+
+    /* Force link color to be consistent */
+    .timeline-entry h3 a {
+      color: #00ffe7 !important;
+    }
+
+    nav a {
+      color: #00ffe7 !important;
     }
   </style>
 </head>
