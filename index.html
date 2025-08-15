@@ -108,23 +108,17 @@
       margin-top: 0.2em;
     }
 
-    /* Styles for the hover image container */
     .project-image-container {
-      position: absolute;
-      right: -10px; /* Position the image to the right of the timeline */
-      top: 0;
+      position: fixed;
+      top: 150px; /* adjust vertical position */
+      right: 50px; /* adjust horizontal position */
       width: 300px;
       height: auto;
       visibility: hidden;
       opacity: 0;
-      transition: opacity 0.5s ease-in-out;
+      transition: opacity 0.3s ease-in-out;
       z-index: 10;
-      pointer-events: none; /* Allows clicks on elements behind it */
-    }
-
-    .timeline-entry:hover .project-image-container {
-      visibility: visible;
-      opacity: 1;
+      pointer-events: none;
     }
 
     .project-image-container img {
@@ -133,6 +127,12 @@
       border-radius: 10px;
       box-shadow: 0 5px 25px rgba(0, 255, 231, 0.6);
       border: 3px solid #00ffe7;
+    }
+
+
+    .timeline-entry:hover .project-image-container {
+      visibility: visible;
+      opacity: 1;
     }
 
     ul {
