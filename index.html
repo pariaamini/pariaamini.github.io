@@ -77,7 +77,7 @@
 
     /* Container for each individual project */
     .timeline-entry {
-      margin-bottom: 1em;
+      margin-bottom: 1em; /* Reduced space between projects */
       transition: transform 0.3s ease;
       position: relative;
     }
@@ -89,7 +89,7 @@
     /* Desktop styles for dates */
     .timeline-date {
       position: absolute;
-      left: -10em;
+      left: -10em; /* Position to the left for desktop */
       top: 0;
       width: 8em;
       text-align: right;
@@ -108,19 +108,23 @@
       margin-top: 0.2em;
     }
 
-    /* Shared hover image container */
+    /* Styles for the hover image container */
     .project-image-container {
-      position: fixed;
-      top: 50%;
-      right: 50px;
-      transform: translateY(-50%);
+      position: absolute;
+      right: -10px; /* Position the image to the right of the timeline */
+      top: 0;
       width: 300px;
       height: auto;
       visibility: hidden;
       opacity: 0;
-      transition: opacity 0.3s ease-in-out;
+      transition: opacity 0.5s ease-in-out;
       z-index: 10;
-      pointer-events: none;
+      pointer-events: none; /* Allows clicks on elements behind it */
+    }
+
+    .timeline-entry:hover .project-image-container {
+      visibility: visible;
+      opacity: 1;
     }
 
     .project-image-container img {
@@ -154,6 +158,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* Mobile Styles: Dates now appear inside the timeline entry on top of the project title */
     @media (max-width: 768px) {
       .timeline-date {
         position: static;
@@ -172,6 +177,7 @@
       }
     }
 
+    /* Force link color to be consistent */
     .timeline-entry h3 a {
       color: #00ffe7 !important;
     }
@@ -192,7 +198,7 @@
   <header id="home">
     <h1>Paria Amini</h1>
     <p>Second Year Computer Engineering Student</p>
-    <li>Hi! This website is currently under construction. Will be finished by August 15th 2025, please check again soon!</li>
+    <li>Hi! This website is currently under construction. Will be finished by august 15th 2025, please check again soon!</li>
   </header>
 
   <section id="about" class="section">
@@ -203,47 +209,70 @@
   <section id="projects" class="section">
     <h2>Project Timeline</h2>
     <div class="timeline">
-      <div class="timeline-entry" data-image="images/skud.jpg">
+
+      <!-- eyetracker
+      <div class="timeline-entry">
         <span class="timeline-date">
-          <span class="timeline-month">March</span>
-          <span class="timeline-year">2024</span>
+            <span class="timeline-month">August</span>
+            <span class="timeline-year">2025</span>
+        </span>
+        <h3><a href="projects/eyetracker.html">Eye Tracker</a></h3>
+        <p>Brief description of what this project does and why it matters.</p>
+        <div class="project-image-container">
+          <img src="https://placehold.co/1000x600/ff00c8/000?text=Eye+Tracker+Image" alt="Eye Tracker Project Image">
+        </div>
+      </div> -->
+
+      <!-- frc 2024 -->
+      <div class="timeline-entry">
+        <span class="timeline-date">
+            <span class="timeline-month">March</span>
+            <span class="timeline-year">2024</span>
         </span>
         <h3><a href="projects/frc2024.html">First Robotics: Crescendo</a></h3>
         <p>Brief description of what this project does and why it matters.</p>
+        <div class="project-image-container">
+          <img src="images/skud.jpg" alt="First Robotics Crescendo Project Image">
+        </div>
       </div>
-
-      <div class="timeline-entry" data-image="images/skills.jpg">
+      <!-- skills -->
+      <div class="timeline-entry">
         <span class="timeline-date">
-          <span class="timeline-month">May</span>
-          <span class="timeline-year">2023</span>
+            <span class="timeline-month">May</span>
+            <span class="timeline-year">2023</span>
         </span>
         <h3><a href="projects/skills.html">Alberta Skills Robotics</a></h3>
         <p>Brief description of what this project does and why it matters.</p>
+        <div class="project-image-container">
+          <img src="images/skills.jpg" alt="Alberta Skills Robotics Project Image">
+        </div>
       </div>
-
-      <div class="timeline-entry" data-image="images/thor.jpg">
+      <!-- frc 2023 -->
+      <div class="timeline-entry">
         <span class="timeline-date">
-          <span class="timeline-month">March</span>
-          <span class="timeline-year">2023</span>
+            <span class="timeline-month">March</span>
+            <span class="timeline-year">2023</span>
         </span>
         <h3><a href="projects/frc2023.html">First Robotics: Charged Up</a></h3>
         <p>Brief description of what this project does and why it matters.</p>
+        <div class="project-image-container">
+          <img src="images/thor.jpg" alt="First Robotics Charged Up Project Image">
+        </div>
       </div>
-
-      <div class="timeline-entry" data-image="images/snoopy.jpg">
+      <!-- frc 2022 -->
+      <div class="timeline-entry">
         <span class="timeline-date">
-          <span class="timeline-month">March</span>
-          <span class="timeline-year">2022</span>
+            <span class="timeline-month">March</span>
+            <span class="timeline-year">2022</span>
         </span>
         <h3><a href="projects/frc2022.html">First Robotics: Rapid React</a></h3>
         <p>Brief description of what this project does and why it matters.</p>
+        <div class="project-image-container">
+          <img src="images/snoopy.jpg" alt="First Robotics Rapid React Project Image">
+        </div>
       </div>
     </div>
-
-    <!-- Shared image container -->
-    <div id="project-image-container" class="project-image-container">
-      <img src="" alt="Project Preview" id="project-image">
-    </div>
+    
   </section>
 
   <section id="upcoming" class="section">
@@ -251,8 +280,8 @@
     <div class="timeline">
       <div class="timeline-entry">
         <span class="timeline-date">
-          <span class="timeline-month">August</span>
-          <span class="timeline-year">2025</span>
+            <span class="timeline-month">August</span>
+            <span class="timeline-year">2025</span>
         </span>
         <h3>PCB Designs</h3>
         <p>Brief description of what this project does and why it matters.</p>
@@ -260,8 +289,8 @@
 
       <div class="timeline-entry">
         <span class="timeline-date">
-          <span class="timeline-month">September</span>
-          <span class="timeline-year">2025</span>
+            <span class="timeline-month">September</span>
+            <span class="timeline-year">2025</span>
         </span>
         <h3>HackGT12</h3>
         <p>Brief description of what this project does and why it matters.</p>
@@ -272,44 +301,5 @@
   <footer>
     &copy; 2025 Paria Amini. All rights reserved.
   </footer>
-
-  <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const imageContainer = document.getElementById("project-image-container");
-    const imageElement = document.getElementById("project-image");
-    let isHoveringTimeline = false;
-
-    document.querySelectorAll(".timeline-entry").forEach(entry => {
-      entry.addEventListener("mouseenter", () => {
-        const imgSrc = entry.getAttribute("data-image");
-        if (imgSrc) {
-          imageElement.src = imgSrc;
-          imageContainer.style.visibility = "visible";
-          imageContainer.style.opacity = "1";
-          isHoveringTimeline = true;
-        }
-      });
-
-      entry.addEventListener("mouseleave", () => {
-        setTimeout(() => {
-          if (!isHoveringTimeline) {
-            imageContainer.style.visibility = "hidden";
-            imageContainer.style.opacity = "0";
-          }
-        }, 50);
-      });
-    });
-
-    document.querySelector("#projects .timeline").addEventListener("mouseleave", () => {
-      isHoveringTimeline = false;
-      imageContainer.style.visibility = "hidden";
-      imageContainer.style.opacity = "0";
-    });
-
-    document.querySelector("#projects .timeline").addEventListener("mouseenter", () => {
-      isHoveringTimeline = true;
-    });
-  });
-  </script>
 </body>
 </html>
