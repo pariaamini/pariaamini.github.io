@@ -1,305 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paria Amini | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: #0f111a;
-      color: #e0e0e0;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paria Amini | Portfolio</title>
+    <!-- Use Tailwind CSS for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #0f111a;
+            color: #e0e0e0;
+        }
 
-    nav {
-      background: #1a1f2b;
-      padding: 1em 2em;
-      display: flex;
-      justify-content: center;
-      gap: 2em;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    }
+        :root {
+            --transition-duration: 0.3s;
+        }
 
-    nav a {
-      color: #00ffe7;
-      text-decoration: none;
-      font-family: 'Orbitron', sans-serif;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
+        nav {
+            background: #1a1f2b;
+            padding: 1em 2em;
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
 
-    nav a:hover {
-      color: #ff00c8;
-    }
+        nav a {
+            color: #00ffe7;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
 
-    header {
-      padding: 4em 1em;
-      text-align: center;
-      background: linear-gradient(135deg, #1f2235, #2c2f4a);
-      border-bottom: 2px solid #00ffe7;
-    }
+        nav a:hover {
+            color: #ff00c8;
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 3em;
-      font-family: 'Orbitron', sans-serif;
-      color: #00ffe7;
-    }
+        header {
+            padding: 4em 1em;
+            text-align: center;
+            background: linear-gradient(135deg, #1f2235, #2c2f4a);
+            border-bottom: 2px solid #00ffe7;
+        }
 
-    header p {
-      font-size: 1.3em;
-      color: #ccc;
-    }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-family: 'Orbitron', sans-serif;
+            color: #00ffe7;
+        }
 
-    .section {
-      padding: 1.5em 1em;
-      max-width: 900px;
-      margin: auto;
-    }
+        header p {
+            font-size: 1.3em;
+            color: #ccc;
+        }
 
-    h2 {
-      font-family: 'Orbitron', sans-serif;
-      color: #ff00c8;
-      border-bottom: 1px solid #444;
-      padding-bottom: 0.5em;
-      margin-bottom: 0.5em;
-    }
+        .section {
+            padding: 1.5em 1em;
+            max-width: 900px;
+            margin: auto;
+        }
 
-    /* Timeline container */
-    .timeline {
-      border-left: 3px solid #00ffe7;
-      padding-left: 1em;
-      position: relative;
-      animation: fadeIn 1s ease-in;
-    }
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #ff00c8;
+            border-bottom: 1px solid #444;
+            padding-bottom: 0.5em;
+            margin-bottom: 0.5em;
+        }
 
-    /* Container for each individual project */
-    .timeline-entry {
-      margin-bottom: 1em; /* Reduced space between projects */
-      transition: transform 0.3s ease;
-      position: relative;
-    }
+        /* Timeline container */
+        .timeline {
+            border-left: 3px solid #00ffe7;
+            padding-left: 1em;
+            position: relative;
+            animation: fadeIn 1s ease-in;
+            width: 100%; /* Ensure it takes up available width */
+        }
 
-    .timeline-entry:hover {
-      transform: translateX(5px);
-    }
+        /* Container for each individual project */
+        .timeline-entry {
+            margin-bottom: 1em; /* Reduced space between projects */
+            transition: transform 0.3s ease;
+            position: relative;
+        }
 
-    /* Desktop styles for dates */
-    .timeline-date {
-      position: absolute;
-      left: -10em; /* Position to the left for desktop */
-      top: 0;
-      width: 8em;
-      text-align: right;
-      color: #ff00c8;
-      font-family: 'Orbitron', sans-serif;
-    }
-    
-    .timeline-month {
-      display: block;
-      font-size: 1.2em;
-    }
+        .timeline-entry:hover {
+            transform: translateX(5px);
+        }
 
-    .timeline-year {
-      display: block;
-      font-size: 0.9em;
-      margin-top: 0.2em;
-    }
+        /* Desktop styles for dates */
+        .timeline-date {
+            position: absolute;
+            left: -10em; /* Position to the left for desktop */
+            top: 0;
+            width: 8em;
+            text-align: right;
+            color: #ff00c8;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .timeline-month {
+            display: block;
+            font-size: 1.2em;
+        }
 
-    /* Styles for the hover image container */
-    .project-image-container {
-      position: absolute;
-      right: -10px; /* Position the image to the right of the timeline */
-      top: 0;
-      width: 300px;
-      height: auto;
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-      z-index: 10;
-      pointer-events: none; /* Allows clicks on elements behind it */
-    }
+        .timeline-year {
+            display: block;
+            font-size: 0.9em;
+            margin-top: 0.2em;
+        }
 
-    .timeline-entry:hover .project-image-container {
-      visibility: visible;
-      opacity: 1;
-    }
+        /* Style for the centralized image container */
+        .image-display-container {
+            flex-shrink: 0; /* Prevents the image container from shrinking */
+            width: 300px; /* Fixed width for desktop */
+            height: 200px; /* Fixed height for consistency */
+            margin-left: 2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: #1a1f2b;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 255, 231, 0.6);
+            border: 3px solid #00ffe7;
+            position: sticky;
+            top: 2em; /* Sticks the image display to the top of the viewport */
+        }
 
-    .project-image-container img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 5px 25px rgba(0, 255, 231, 0.6);
-      border: 3px solid #00ffe7;
-    }
+        /* Style for the image itself, with a transition for smooth fading */
+        #display-image {
+            transition: opacity var(--transition-duration) ease-in-out;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    ul {
-      list-style-type: square;
-      padding-left: 1.5em;
-    }
+        ul {
+            list-style-type: square;
+            padding-left: 1.5em;
+        }
 
-    li {
-      margin-bottom: 0.5em;
-    }
+        li {
+            margin-bottom: 0.5em;
+        }
 
-    footer {
-      text-align: center;
-      padding: 2em 0;
-      background: #1a1f2b;
-      color: #888;
-      font-size: 0.9em;
-      border-top: 2px solid #00ffe7;
-    }
+        footer {
+            text-align: center;
+            padding: 2em 0;
+            background: #1a1f2b;
+            color: #888;
+            font-size: 0.9em;
+            border-top: 2px solid #00ffe7;
+        }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    /* Mobile Styles: Dates now appear inside the timeline entry on top of the project title */
-    @media (max-width: 768px) {
-      .timeline-date {
-        position: static;
-        left: auto;
-        width: auto;
-        text-align: left;
-        margin-bottom: 0.5em;
-        display: block;
-      }
-      .timeline-year {
-        margin-top: 0;
-        display: inline;
-      }
-      .timeline-month {
-        display: inline;
-      }
-    }
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .timeline-date {
+                position: static;
+                left: auto;
+                width: auto;
+                text-align: left;
+                margin-bottom: 0.5em;
+                display: block;
+            }
+            .timeline-year {
+                margin-top: 0;
+                display: inline;
+            }
+            .timeline-month {
+                display: inline;
+            }
+            /* Stack timeline and image display on mobile */
+            .project-timeline-container {
+                flex-direction: column;
+                gap: 1.5em;
+            }
+            .image-display-container {
+                width: 100%;
+                height: 200px;
+                margin-left: 0;
+                position: static;
+            }
+        }
 
-    /* Force link color to be consistent */
-    .timeline-entry h3 a {
-      color: #00ffe7 !important;
-    }
+        /* Force link color to be consistent */
+        .timeline-entry h3 a {
+            color: #00ffe7 !important;
+        }
 
-    nav a {
-      color: #00ffe7 !important;
-    }
-  </style>
+        nav a {
+            color: #00ffe7 !important;
+        }
+    </style>
 </head>
 <body>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#projects">Projects</a>
-    <a href="#upcoming">Upcoming</a>
-    <a href="#about">About</a>
-  </nav>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#upcoming">Upcoming</a>
+        <a href="#about">About</a>
+    </nav>
 
-  <header id="home">
-    <h1>Paria Amini</h1>
-    <p>Second Year Computer Engineering Student</p>
-    <li>Hi! This website is currently under construction. Will be finished by august 15th 2025, please check again soon!</li>
-  </header>
+    <header id="home">
+        <h1>Paria Amini</h1>
+        <p>Second Year Computer Engineering Student</p>
+        <li>Hi! This website is currently under construction. Will be finished by august 15th 2025, please check again soon!</li>
+    </header>
 
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>Hi! I'm Paria, a passionate computer engineering student with a love for embedded systems, futuristic tech, and creative problem-solving. I thrive on building things that bridge the digital and physical worlds.</p>
-  </section>
-  
-  <section id="projects" class="section">
-    <h2>Project Timeline</h2>
-    <div class="timeline">
-
-      <!-- eyetracker
-      <div class="timeline-entry">
-        <span class="timeline-date">
-            <span class="timeline-month">August</span>
-            <span class="timeline-year">2025</span>
-        </span>
-        <h3><a href="projects/eyetracker.html">Eye Tracker</a></h3>
-        <p>Brief description of what this project does and why it matters.</p>
-        <div class="project-image-container">
-          <img src="https://placehold.co/1000x600/ff00c8/000?text=Eye+Tracker+Image" alt="Eye Tracker Project Image">
-        </div>
-      </div> -->
-
-      <!-- frc 2024 -->
-      <div class="timeline-entry">
-        <span class="timeline-date">
-            <span class="timeline-month">March</span>
-            <span class="timeline-year">2024</span>
-        </span>
-        <h3><a href="projects/frc2024.html">First Robotics: Crescendo</a></h3>
-        <p>Brief description of what this project does and why it matters.</p>
-        <div class="project-image-container">
-          <img src="images/skud.jpg" alt="First Robotics Crescendo Project Image">
-        </div>
-      </div>
-      <!-- skills -->
-      <div class="timeline-entry">
-        <span class="timeline-date">
-            <span class="timeline-month">May</span>
-            <span class="timeline-year">2023</span>
-        </span>
-        <h3><a href="projects/skills.html">Alberta Skills Robotics</a></h3>
-        <p>Brief description of what this project does and why it matters.</p>
-        <div class="project-image-container">
-          <img src="images/skills.jpg" alt="Alberta Skills Robotics Project Image">
-        </div>
-      </div>
-      <!-- frc 2023 -->
-      <div class="timeline-entry">
-        <span class="timeline-date">
-            <span class="timeline-month">March</span>
-            <span class="timeline-year">2023</span>
-        </span>
-        <h3><a href="projects/frc2023.html">First Robotics: Charged Up</a></h3>
-        <p>Brief description of what this project does and why it matters.</p>
-        <div class="project-image-container">
-          <img src="images/thor.jpg" alt="First Robotics Charged Up Project Image">
-        </div>
-      </div>
-      <!-- frc 2022 -->
-      <div class="timeline-entry">
-        <span class="timeline-date">
-            <span class="timeline-month">March</span>
-            <span class="timeline-year">2022</span>
-        </span>
-        <h3><a href="projects/frc2022.html">First Robotics: Rapid React</a></h3>
-        <p>Brief description of what this project does and why it matters.</p>
-        <div class="project-image-container">
-          <img src="images/snoopy.jpg" alt="First Robotics Rapid React Project Image">
-        </div>
-      </div>
-    </div>
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>Hi! I'm Paria, a passionate computer engineering student with a love for embedded systems, futuristic tech, and creative problem-solving. I thrive on building things that bridge the digital and physical worlds.</p>
+    </section>
     
-  </section>
+    <section id="projects" class="section">
+        <h2>Project Timeline</h2>
+        <!-- New container to hold the timeline and the image side-by-side -->
+        <div class="project-timeline-container flex gap-8">
+            <div class="timeline">
+                <!-- FRC 2024 -->
+                <div class="timeline-entry">
+                    <span class="timeline-date">
+                        <span class="timeline-month">March</span>
+                        <span class="timeline-year">2024</span>
+                    </span>
+                    <h3>
+                        <a href="projects/frc2024.html"
+                           class="link-hover-effect"
+                           data-image="images/skud.jpg">
+                           First Robotics: Crescendo
+                        </a>
+                    </h3>
+                    <p>Brief description of what this project does and why it matters.</p>
+                </div>
+                <!-- skills -->
+                <div class="timeline-entry">
+                    <span class="timeline-date">
+                        <span class="timeline-month">May</span>
+                        <span class="timeline-year">2023</span>
+                    </span>
+                    <h3>
+                        <a href="projects/skills.html"
+                           class="link-hover-effect"
+                           data-image="images/skills.jpg">
+                           Alberta Skills Robotics
+                        </a>
+                    </h3>
+                    <p>Brief description of what this project does and why it matters.</p>
+                </div>
+                <!-- frc 2023 -->
+                <div class="timeline-entry">
+                    <span class="timeline-date">
+                        <span class="timeline-month">March</span>
+                        <span class="timeline-year">2023</span>
+                    </span>
+                    <h3>
+                        <a href="projects/frc2023.html"
+                           class="link-hover-effect"
+                           data-image="images/thor.jpg">
+                           First Robotics: Charged Up
+                        </a>
+                    </h3>
+                    <p>Brief description of what this project does and why it matters.</p>
+                </div>
+                <!-- frc 2022 -->
+                <div class="timeline-entry">
+                    <span class="timeline-date">
+                        <span class="timeline-month">March</span>
+                        <span class="timeline-year">2022</span>
+                    </span>
+                    <h3>
+                        <a href="projects/frc2022.html"
+                           class="link-hover-effect"
+                           data-image="images/snoopy.jpg">
+                           First Robotics: Rapid React
+                        </a>
+                    </h3>
+                    <p>Brief description of what this project does and why it matters.</p>
+                </div>
+            </div>
+            
+            <!-- Centralized container for the image display -->
+            <div class="image-display-container hidden sm:flex">
+                <img id="display-image" src="" alt="Image will appear here on hover">
+            </div>
+        </div>
+    </section>
 
-  <section id="upcoming" class="section">
-    <h2>Upcoming Events</h2>
-    <div class="timeline">
-      <div class="timeline-entry">
-        <span class="timeline-date">
-            <span class="timeline-month">August</span>
-            <span class="timeline-year">2025</span>
-        </span>
-        <h3>PCB Designs</h3>
-        <p>Brief description of what this project does and why it matters.</p>
-      </div>
+    <section id="upcoming" class="section">
+        <h2>Upcoming Events</h2>
+        <div class="timeline">
+            <div class="timeline-entry">
+                <span class="timeline-date">
+                    <span class="timeline-month">August</span>
+                    <span class="timeline-year">2025</span>
+                </span>
+                <h3>
+                    <a href="#" class="link-hover-effect" data-image="https://placehold.co/600x400/00ffe7/0f111a?text=PCB+Designs">PCB Designs</a>
+                </h3>
+                <p>Brief description of what this project does and why it matters.</p>
+            </div>
 
-      <div class="timeline-entry">
-        <span class="timeline-date">
-            <span class="timeline-month">September</span>
-            <span class="timeline-year">2025</span>
-        </span>
-        <h3>HackGT12</h3>
-        <p>Brief description of what this project does and why it matters.</p>
-      </div>
-    </div>
-  </section>
+            <div class="timeline-entry">
+                <span class="timeline-date">
+                    <span class="timeline-month">September</span>
+                    <span class="timeline-year">2025</span>
+                </span>
+                <h3>
+                    <a href="#" class="link-hover-effect" data-image="https://placehold.co/600x400/ff00c8/0f111a?text=HackGT12">HackGT12</a>
+                </h3>
+                <p>Brief description of what this project does and why it matters.</p>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    &copy; 2025 Paria Amini. All rights reserved.
-  </footer>
+    <footer>
+        &copy; 2025 Paria Amini. All rights reserved.
+    </footer>
+
+    <script>
+        // Wait for the DOM to be fully loaded before running the script
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all elements with the class 'link-hover-effect'
+            const links = document.querySelectorAll('.link-hover-effect');
+            // Select the image element that will display the images
+            const displayImage = document.getElementById('display-image');
+
+            // Check if the screen is large enough to support the side-by-side layout
+            const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+
+            if (isDesktop) {
+                // Loop through each link to add event listeners
+                links.forEach(link => {
+                    // Add a 'mouseover' event listener to each link
+                    link.addEventListener('mouseover', (event) => {
+                        // Get the image URL from the custom 'data-image' attribute
+                        const imageUrl = event.target.dataset.image;
+                        // Set the image source to the URL from the data attribute
+                        displayImage.src = imageUrl;
+                        // Make the image visible by setting its opacity to 1
+                        displayImage.style.opacity = '1';
+                    });
+
+                    // Add a 'mouseout' event listener to hide the image when the mouse leaves
+                    link.addEventListener('mouseout', () => {
+                        // Hide the image by setting its opacity to 0
+                        displayImage.style.opacity = '0';
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
