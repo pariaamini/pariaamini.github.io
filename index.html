@@ -65,8 +65,6 @@
             margin: auto;
         }
 
-        /* Removed h2 and h3 rules to use inline styles instead for max specificity */
-
         /* Timeline container */
         .timeline {
             border-left: 3px solid #00ffe7;
@@ -230,6 +228,12 @@
         nav a {
             color: #00ffe7 !important;
         }
+
+        /* Styles for skills section to mimic the timeline */
+        .skills-column {
+            border-left: 3px solid #00ffe7;
+            padding-left: 1em;
+        }
     </style>
 </head>
 <body>
@@ -239,6 +243,7 @@
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#upcoming">Upcoming</a>
+        <a href="#contact">Contact</a>
     </nav>
 
     <header id="home">
@@ -258,10 +263,11 @@
     </section>
 
     <section id="skills" class="section">
-        <h2 style="font-size: 2.5em; font-family: 'Orbitron', sans-serif; color: #ff00c8; border-bottom: 1px solid #444; padding-bottom: 0.1em;">Skills</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <h2 style="font-size: 2.5em; font-family: 'Orbitron', sans-serif; color: #ff00c8; padding-bottom: 0.1em;">Skills</h2>
+        <!-- No more big container, just the grid directly -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <!-- Programming Languages -->
-            <div class="p-3 rounded-lg border-2 border-[#00ffe7] bg-[#1f2235]">
+            <div class="skills-column">
                 <h3 style="font-size: 1.25em; font-family: 'Orbitron', sans-serif; color: #00ffe7;">Programming Languages</h3>
                 <ul class="list-none p-0 mt-2 text-sm">
                     <li class="flex items-center gap-2 mb-1">C++</li>
@@ -271,7 +277,7 @@
                 </ul>
             </div>
             <!-- Robotics & Hardware -->
-            <div class="p-3 rounded-lg border-2 border-[#00ffe7] bg-[#1f2235]">
+            <div class="skills-column">
                 <h3 style="font-size: 1.25em; font-family: 'Orbitron', sans-serif; color: #00ffe7;">Robotics & Hardware</h3>
                 <ul class="list-none p-0 mt-2 text-sm">
                     <li class="flex items-center gap-2 mb-1">Embedded Systems</li>
@@ -281,7 +287,7 @@
                 </ul>
             </div>
             <!-- Tools & Software -->
-            <div class="p-3 rounded-lg border-2 border-[#00ffe7] bg-[#1f2235]">
+            <div class="skills-column">
                 <h3 style="font-size: 1.25em; font-family: 'Orbitron', sans-serif; color: #00ffe7;">Tools & Software</h3>
                 <ul class="list-none p-0 mt-2 text-sm">
                     <li class="flex items-center gap-2 mb-1">Git</li>
@@ -290,11 +296,22 @@
                     <li class="flex items-center gap-2 mb-1">Visual Studio Code</li>
                 </ul>
             </div>
+            <!-- Soft Skills -->
+            <div class="skills-column">
+                <h3 style="font-size: 1.25em; font-family: 'Orbitron', sans-serif; color: #00ffe7;">Soft Skills</h3>
+                <ul class="list-none p-0 mt-2 text-sm">
+                    <li class="flex items-center gap-2 mb-1">Communication</li>
+                    <li class="flex items-center gap-2 mb-1">Teamwork</li>
+                    <li class="flex items-center gap-2 mb-1">Problem-Solving</li>
+                    <li class="flex items-center gap-2 mb-1">Time Management</li>
+                </ul>
+            </div>
         </div>
     </section>
     
     <section id="projects" class="section">
-        <h2 style="font-size: 2.5em; font-family: 'Orbitron', sans-serif; color: #ff00c8;">Project Timeline</h2>
+        <!-- Added a bottom margin to the title to create more space -->
+        <h2 class="mb-4" style="font-size: 2.5em; font-family: 'Orbitron', sans-serif; color: #ff00c8;">Project Timeline</h2>
         <!-- New container to hold the timeline and the image side-by-side -->
         <div class="project-timeline-container flex gap-8">
             <div class="timeline">
@@ -395,6 +412,26 @@
                 </h3>
                 <p>Brief description of what this project does and why it matters.</p>
             </div>
+        </div>
+    </section>
+    
+    <!-- Updated Contact Section with social links -->
+    <section id="contact" class="section text-center">
+        <h2 style="font-size: 2.5em; font-family: 'Orbitron', sans-serif; color: #ff00c8;">Contact Me</h2>
+        <p class="text-lg mb-8">Feel free to connect with me through the following channels:</p>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-4">
+            <a href="mailto:youremail@example.com" class="text-lg text-[#00ffe7] hover:text-[#ff00c8] transition-colors duration-300 transform hover:scale-105">
+                Email
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-lg text-[#00ffe7] hover:text-[#ff00c8] transition-colors duration-300 transform hover:scale-105">
+                LinkedIn
+            </a>
+            <a href="https://github.com/yourusername" target="_blank" class="text-lg text-[#00ffe7] hover:text-[#ff00c8] transition-colors duration-300 transform hover:scale-105">
+                GitHub
+            </a>
+            <a href="https://twitter.com/yourhandle" target="_blank" class="text-lg text-[#00ffe7] hover:text-[#ff00c8] transition-colors duration-300 transform hover:scale-105">
+                Twitter
+            </a>
         </div>
     </section>
 
