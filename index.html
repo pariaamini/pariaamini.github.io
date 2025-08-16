@@ -74,6 +74,7 @@
             position: relative;
             animation: fadeIn 1s ease-in;
             width: 100%; /* Ensure it takes up available width */
+            align-self: flex-start; /* This is the key fix to prevent the line from stretching */
         }
 
         /* Container for each individual project */
@@ -234,9 +235,10 @@
 <body>
     <nav>
         <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#upcoming">Upcoming</a>
-        <a href="#about">About</a>
     </nav>
 
     <header id="home">
@@ -254,9 +256,45 @@
             <p>Hi! I'm Paria, a passionate computer engineering student with a love for embedded systems, futuristic tech, and creative problem-solving. I thrive on building things that bridge the digital and physical worlds.</p>
         </div>
     </section>
+
+    <section id="skills" class="section">
+        <h2 style="font-size: 2.5em; font-family: 'Orbitron', sans-serif; color: #ff00c8; border-bottom: 1px solid #444; padding-bottom: 0.1em;">Skills</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Programming Languages -->
+            <div class="p-3 rounded-lg border-2 border-[#00ffe7] bg-[#1f2235]">
+                <h3 style="font-size: 1.25em; font-family: 'Orbitron', sans-serif; color: #00ffe7;">Programming Languages</h3>
+                <ul class="list-none p-0 mt-2 text-sm">
+                    <li class="flex items-center gap-2 mb-1">C++</li>
+                    <li class="flex items-center gap-2 mb-1">Python</li>
+                    <li class="flex items-center gap-2 mb-1">Java</li>
+                    <li class="flex items-center gap-2 mb-1">MATLAB</li>
+                </ul>
+            </div>
+            <!-- Robotics & Hardware -->
+            <div class="p-3 rounded-lg border-2 border-[#00ffe7] bg-[#1f2235]">
+                <h3 style="font-size: 1.25em; font-family: 'Orbitron', sans-serif; color: #00ffe7;">Robotics & Hardware</h3>
+                <ul class="list-none p-0 mt-2 text-sm">
+                    <li class="flex items-center gap-2 mb-1">Embedded Systems</li>
+                    <li class="flex items-center gap-2 mb-1">ROS</li>
+                    <li class="flex items-center gap-2 mb-1">VEX Robotics</li>
+                    <li class="flex items-center gap-2 mb-1">FRC Robotics</li>
+                </ul>
+            </div>
+            <!-- Tools & Software -->
+            <div class="p-3 rounded-lg border-2 border-[#00ffe7] bg-[#1f2235]">
+                <h3 style="font-size: 1.25em; font-family: 'Orbitron', sans-serif; color: #00ffe7;">Tools & Software</h3>
+                <ul class="list-none p-0 mt-2 text-sm">
+                    <li class="flex items-center gap-2 mb-1">Git</li>
+                    <li class="flex items-center gap-2 mb-1">SolidWorks</li>
+                    <li class="flex items-center gap-2 mb-1">KiCad</li>
+                    <li class="flex items-center gap-2 mb-1">Visual Studio Code</li>
+                </ul>
+            </div>
+        </div>
+    </section>
     
     <section id="projects" class="section">
-        <h2 style="font-size: 2.5em; font-family: 'Orbitron', sans-serif; color: #ff00c8; border-bottom: 1px solid #444; padding-bottom: 0.1em;">Project Timeline</h2>
+        <h2 style="font-size: 2.5em; font-family: 'Orbitron', sans-serif; color: #ff00c8;">Project Timeline</h2>
         <!-- New container to hold the timeline and the image side-by-side -->
         <div class="project-timeline-container flex gap-8">
             <div class="timeline">
@@ -334,7 +372,7 @@
     </section>
 
     <section id="upcoming" class="section">
-        <h2 style="font-size: 2.5em; font-family: 'Orbitron', sans-serif; color: #ff00c8; border-bottom: 1px solid #444; padding-bottom: 0.1em;">Upcoming Events</h2>
+        <h2 style="font-size: 2.5em; font-family: 'Orbitron', sans-serif; color: #ff00c8;">Upcoming Events</h2>
         <div class="timeline">
             <div class="timeline-entry">
                 <span class="timeline-date">
