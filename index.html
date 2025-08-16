@@ -28,16 +28,18 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
+        /* Removed the !important to allow the hover color to work */
         nav a {
             color: #00ffe7;
             text-decoration: none;
             font-family: 'Orbitron', sans-serif;
             font-weight: bold;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, text-shadow 0.3s ease; 
         }
 
         nav a:hover {
             color: #ff00c8;
+            text-shadow: 0 0 8px #ff00c8; /* Adds the pink glow effect */
         }
 
         header {
@@ -421,16 +423,13 @@
         <p class="text-lg mb-8">Feel free to connect with me through the following channels:</p>
         <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-4">
             <a href="mailto:youremail@example.com" class="text-lg text-[#00ffe7] hover:text-[#ff00c8] transition-colors duration-300 transform hover:scale-105">
-                Email
+                Send an Email
             </a>
             <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-lg text-[#00ffe7] hover:text-[#ff00c8] transition-colors duration-300 transform hover:scale-105">
                 LinkedIn
             </a>
             <a href="https://github.com/yourusername" target="_blank" class="text-lg text-[#00ffe7] hover:text-[#ff00c8] transition-colors duration-300 transform hover:scale-105">
                 GitHub
-            </a>
-            <a href="https://twitter.com/yourhandle" target="_blank" class="text-lg text-[#00ffe7] hover:text-[#ff00c8] transition-colors duration-300 transform hover:scale-105">
-                Twitter
             </a>
         </div>
     </section>
@@ -481,6 +480,31 @@
                     });
                 });
             }
+
+            // Get all navigation links
+            const navLinks = document.querySelectorAll('nav a');
+
+            // Add a click event listener to each nav link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    // Prevent the default anchor link behavior
+                    event.preventDefault();
+                    
+                    // Get the ID from the href attribute (e.g., '#about')
+                    const targetId = this.getAttribute('href');
+                    
+                    // Find the target section element
+                    const targetSection = document.querySelector(targetId);
+                    
+                    // Check if the target section exists before scrolling
+                    if (targetSection) {
+                        // Use the scrollIntoView method for a smooth scrolling animation
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
         });
     </script>
 </body>
