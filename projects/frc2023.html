@@ -1,134 +1,180 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skills Robotics | Paria Amini</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: #0f111a;
-      color: #e0e0e0;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charged Up | Paria Amini</title>
+    <!-- Use Tailwind CSS for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #0f111a;
+            color: #e0e0e0;
+        }
 
-    nav {
-      background: #1a1f2b;
-      padding: 1em 2em;
-      display: flex;
-      justify-content: center;
-      gap: 2em;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    }
+        nav {
+            background: #1a1f2b;
+            padding: 1em 2em;
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
 
-    nav a {
-      color: #00ffe7;
-      text-decoration: none;
-      font-family: 'Orbitron', sans-serif;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
+        nav a {
+            color: #00ffe7;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
 
-    nav a:hover {
-      color: #ff00c8;
-    }
+        nav a:hover {
+            color: #ff00c8;
+        }
 
-    header {
-      padding: 3em 1em;
-      text-align: center;
-      background: linear-gradient(135deg, #1f2235, #2c2f4a);
-      border-bottom: 2px solid #00ffe7;
-    }
+        header {
+            padding: 3em 1em;
+            text-align: center;
+            /* Added background image and overlay */
+            background-image: linear-gradient(rgba(15, 17, 26, 0.6), rgba(15, 17, 26, 0.6)), url('images/charged_up_field.jpg');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 2px solid #00ffe7;
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-      font-family: 'Orbitron', sans-serif;
-      color: #00ffe7;
-    }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-family: 'Orbitron', sans-serif;
+            color: #00ffe7;
+        }
 
-    header p {
-      font-size: 1.2em;
-      color: #ccc;
-    }
+        header p {
+            font-size: 1.2em;
+            color: #ccc;
+        }
 
-    .section {
-      padding: 3em 1em;
-      max-width: 900px;
-      margin: auto;
-      animation: fadeIn 1s ease-in;
-    }
+        .section {
+            padding: 3em 1em;
+            max-width: 900px;
+            margin: auto;
+            animation: fadeIn 1s ease-in;
+        }
 
-    h2 {
-      font-family: 'Orbitron', sans-serif;
-      color: #ff00c8;
-      border-bottom: 1px solid #444;
-      padding-bottom: 0.5em;
-      margin-bottom: 1em;
-    }
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #ff00c8;
+            border-bottom: 1px solid #444;
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+        }
 
-    .project-details {
-      line-height: 1.6;
-    }
+        .project-details {
+            line-height: 1.6;
+        }
 
-    .project-details a {
-      color: #00ffe7;
-      text-decoration: underline;
-    }
+        .project-details a {
+            color: #00ffe7;
+            text-decoration: underline;
+        }
 
-    .project-details a:hover {
-      text-shadow: 0 0 5px #00ffe7;
-    }
+        .project-details a:hover {
+            text-shadow: 0 0 5px #00ffe7;
+        }
 
-    footer {
-      text-align: center;
-      padding: 2em 0;
-      background: #1a1f2b;
-      color: #888;
-      font-size: 0.9em;
-      border-top: 2px solid #00ffe7;
-    }
+        footer {
+            text-align: center;
+            padding: 2em 0;
+            background: #1a1f2b;
+            color: #888;
+            font-size: 0.9em;
+            border-top: 2px solid #00ffe7;
+        }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
-  <nav>
-    <a href="../index.html#home">Home</a>
-    <a href="../index.html#projects">Projects</a>
-    <a href="../index.html#upcoming">Upcoming</a>
-    <a href="../index.html#about">About</a>
-  </nav>
+    <nav>
+        <a href="index.html#home">Home</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#upcoming">Upcoming</a>
+        <a href="index.html#about">About</a>
+    </nav>
 
-  <header>
-    <h1>Charged Up 2023</h1>
-    <p>Strip Tracking, ToFs, Autonomous Sequences</p>
-  </header>
+    <header>
+        <h1>First Robotics: Charged Up (2023)</h1>
+        <p>Strip Tracking || TOFs || The Autonomous Award</p>
+    </header>
 
-  <section class="section">
-    <h2>Overview</h2>
-    <div class="project-details">
-      <p>This project is about [brief description]. It was built using [technologies used] and aims to [goal or impact].</p>
-      <p>Check out the <a href="https://github.com/yourusername/project1">GitHub repo</a> or view a <a href="https://yourdemo.com">live demo</a>.</p>
-    </div>
+    <section class="section">
+        <!-- First Block: Overview and Image 1 -->
+        <div class="flex flex-col md:flex-row items-start gap-8 mb-4">
+            <div class="md:w-1/2">
+                <h2>Overview</h2>
+                <div class="project-details">
+                    <p>My primary focus for this project was developing an effective autonomous routine. Using **reflective strip distance tracking** and encoders, our robot reliably navigated the field to score cones and cubes. This work was critical in securing our team the **Autonomous Award**.</p>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex flex-col items-center justify-center">
+                <img src="https://placehold.co/600x400/94a3b8/ffffff?text=Charged+Up+Robot" alt="A team's robot from the 2023 FRC Charged Up competition." class="rounded-lg shadow-xl w-full">
+                <p class="text-sm mt-2 text-gray-400 text-center">Our team's robot, designed and built for the Charged Up competition.</p>
+            </div>
+        </div>
+    </section>
 
-    <h2>Features</h2>
-    <ul>
-      <li>Feature one that stands out</li>
-      <li>Another cool functionality</li>
-      <li>Something experimental or innovative</li>
-    </ul>
+    <!-- Separator -->
+    <div class="border-t border-[#444]"></div>
 
-    <h2>Reflection</h2>
-    <p>What you learned, what surprised you, and what you'd improve next time.</p>
-  </section>
+    <section class="section">
+        <!-- Second Block: Features and Video (Flipped) -->
+        <div class="flex flex-col md:flex-row-reverse items-start gap-8 mb-4">
+            <div class="md:w-1/2">
+                <h2>Features</h2>
+                <div class="project-details">
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>**Advanced Autonomous Sequences:** Executed precise actions to pick up and score game pieces.</li>
+                        <li>**Reflective Strip Distance Tracking:** Accurately positioned the robot for consistent performance.</li>
+                        <li>**Award-Winning Performance:** Recognized with the prestigious Autonomous Award.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex flex-col items-center justify-center">
+                <!-- Video Player -->
+                <video src="images/2023_autonomous.mov" controls class="rounded-lg shadow-xl w-full"></video>
+                <p class="text-sm mt-2 text-gray-400 text-center">Video showcasing the robot's autonomous routine in action.</p>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    &copy; 2025 Paria Amini. All rights reserved.
-  </footer>
+    <!-- Separator -->
+    <div class="border-t border-[#444]"></div>
+
+    <section class="section">
+        <!-- Third Block: Reflection and Image 2 -->
+        <div class="flex flex-col md:flex-row items-start gap-8">
+            <div class="md:w-1/2">
+                <h2>Reflection</h2>
+                <div class="project-details">
+                    <p>This project taught me the value of rigorous testing and a clean, well-documented codebase. The experience solidified my skills in sensor integration and autonomous system design. Moving forward, I'd like to explore using computer vision for even greater precision.</p>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex flex-col items-center justify-center">
+                <img src="https://placehold.co/600x400/ff00c8/ffffff?text=Game+Field" alt="The game field for the 2023 FRC Charged Up competition." class="rounded-lg shadow-xl w-full">
+                <p class="text-sm mt-2 text-gray-400 text-center">A view of the game field with the scoring zones for the 2023 competition.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Paria Amini. All rights reserved.
+    </footer>
 </body>
-</html> -->
+</html>
