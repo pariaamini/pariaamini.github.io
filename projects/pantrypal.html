@@ -159,28 +159,32 @@
     <!-- Separator -->
     <div class="border-t border-[#444]"></div>
 
-    <div class="project-gallery flex flex-row gap-4 overflow-x-scroll pb-4">
+    <div class="project-gallery grid grid-cols-1 sm:grid-cols-2 gap-8 items-start">
 
-        <!-- Image 1: Reused Campus image -->
-        <div class="flex-shrink-0 w-1/3 min-w-[280px] flex flex-col items-center justify-start">
-            <img src="images/gt_building.jpg" alt="Georgia Tech Campus" class="rounded-lg shadow-xl w-full">
-            <p class="text-sm mt-2 text-gray-400 text-center">Campus View</p>
-        </div>
+            <!-- Portrait Image 1: Campus View -->
+            <div class="flex flex-col items-center justify-start">
+                <img src="images/gt_building.jpg" alt="Georgia Tech Campus"
+                    class="project-gallery-image rounded-lg w-full h-auto object-cover max-h-96">
+                <p class="text-sm mt-2 text-gray-400 text-center">Campus View</p>
+            </div>
 
-        <!-- Image 2: Placeholder (App screenshot) -->
-        <div class="flex-shrink-0 w-1/3 min-w-[280px] flex flex-col items-center justify-start">
-            <img src="images/gt_hacking.jpg" alt="Placeholder for App Screen 1"
-                class="rounded-lg shadow-xl w-full">
-            <p class="text-sm mt-2 text-gray-400 text-center">App Screen Mockup</p>
+            <!-- Portrait Image 2: App Screen Mockup (center image in your screenshot) -->
+            <div class="flex flex-col items-center justify-start">
+                <img src="images/gt_hacking.jpg" alt="Placeholder for App Screen 1"
+                    class="project-gallery-image rounded-lg w-full h-auto object-cover max-h-96">
+                <p class="text-sm mt-2 text-gray-400 text-center">Hackathon Session</p>
+            </div>
+            
+            <!-- Landscape Image 3: Data Visualization (this spans both columns) -->
+            <div class="sm:col-span-2 flex flex-col items-center justify-start mt-4">
+                <!-- Using max-w-2xl to make it overall smaller and centered on larger screens -->
+                <div class="w-full max-w-2xl"> 
+                    <img src="images/gt_sky.jpg" alt="Placeholder for Data View"
+                        class="project-gallery-image rounded-lg w-full h-auto object-cover">
+                    <p class="text-sm mt-2 text-gray-400 text-center">Data Visualization</p>
+                </div>
+            </div>
         </div>
-
-        <!-- Image 3: Placeholder (Data visualization) -->
-        <div class="flex-shrink-0 w-1/3 min-w-[280px] flex flex-col items-center justify-start">
-            <img src="images/gt_sky.jpg" alt="Placeholder for Data View"
-                class="rounded-lg shadow-xl w-full">
-            <p class="text-sm mt-2 text-gray-400 text-center">Data Visualization</p>
-        </div>
-    </div>
     <footer>
         &copy; 2025 Paria Amini. All rights reserved.
     </footer>
