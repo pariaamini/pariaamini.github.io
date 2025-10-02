@@ -131,7 +131,8 @@
             text-transform: uppercase;
             font-weight: bold;
             letter-spacing: 0.5px;
-            background-color: rgba(0, 255, 231, 0.1); /* Slight background for visibility */
+            background-color: rgba(0, 255, 231, 0.1);
+            /* Slight background for visibility */
         }
 
         /* Style for the centralized image container */
@@ -236,13 +237,14 @@
             box-shadow: 0 0 10px #00ffe7, 0 0 20px #00ffe7;
             transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
         }
-        
+
         .email-button:hover {
             background-color: #ff00c8;
             color: #0f111a;
             box-shadow: 0 0 15px #ff00c8, 0 0 30px #ff00c8;
             transform: translateY(-2px);
         }
+
         /* End new CSS */
 
 
@@ -266,7 +268,8 @@
                 width: auto;
                 text-align: left;
                 margin-bottom: 0.5em;
-                display: flex; /* Use flex for mobile to easily align date and status */
+                display: flex;
+                /* Use flex for mobile to easily align date and status */
                 flex-direction: row;
                 align-items: center;
             }
@@ -416,102 +419,118 @@
         </h2>
         <!-- New container to hold the timeline and the image side-by-side -->
         <div class="project-timeline-container flex gap-8">
-            <div class="timeline">
-                <!-- PantryPal -->
+            <!-- <div class="timeline">
                 <div class="timeline-entry">
                     <span class="timeline-date">
-                        <span class="timeline-month">September</span>
+                        <span class="timeline-month">October</span>
                         <span class="timeline-year">2025</span>
+                        <span class="timeline-status">Upcoming</span>
                     </span>
                     <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
-                        <a href="projects/pantrypal.html" class="link-hover-effect" data-image="images/skills.jpg">
-                            PantryPal || HackGT12
-                        </a>
+                        <a href="#" class="link-hover-effect"
+                            data-image="https://placehold.co/600x400/00ffe7/0f111a?text=PCB+Designs">PCB Designs</a>
                     </h3>
-                    <p>Created PantryPal, an app integrates an MCP server, Firebase, and the OpenAI API to generate personalized grocery lists and recipes based on nutrition and budgeting preferences.</p>
-                </div>
-                <!-- DIY Eyetracker -->
-                <div class="timeline-entry">
-                    <span class="timeline-date">
-                        <span class="timeline-month">August</span>
-                        <span class="timeline-year">2025</span>
-                         <span class="timeline-status">In Progress</span>
-                    </span>
-                    <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
-                        <a href="projects/eyetracker.html" class="link-hover-effect" data-image="images/skills.jpg">
-                            DIY Eyetracker || NAT
-                        </a>
-                    </h3>
-                    <p>Designed and built a DIY eyetracker using JeVois cameras. Modeled after Pupil Labs 'Pupil Core' Eye Tracker</p>
-                </div>
-                <!-- FRC 2024 -->
-                <div class="timeline-entry">
-                    <span class="timeline-date">
-                        <span class="timeline-month">March</span>
-                        <span class="timeline-year">2024</span>
-                    </span>
-                    <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
-                        <a href="projects/frc2024.html" class="link-hover-effect" data-image="images/2024frc.jpg">
-                            First Robotics: Crescendo
-                        </a>
-                    </h3>
-                    <p>Developed code for robotic arm, shooter, climber.</p>
-                </div>
-                <!-- skills -->
-                <div class="timeline-entry">
-                    <span class="timeline-date">
-                        <span class="timeline-month">May</span>
-                        <span class="timeline-year">2023</span>
-                    </span>
-                    <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
-                        <a href="projects/skills.html" class="link-hover-effect" data-image="images/skills.jpg">
-                            Alberta Skills Robotics
-                        </a>
-                    </h3>
-                    <p>Developed a mechanum drivetrain and shooting mechanism for the 2023 Alberta Skills Robotics
-                        Competition</p>
-                </div>
-                <!-- frc 2023 -->
-                <div class="timeline-entry">
-                    <span class="timeline-date">
-                        <span class="timeline-month">March</span>
-                        <span class="timeline-year">2023</span>
-                    </span>
-                    <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
-                        <a href="projects/frc2023.html" class="link-hover-effect" data-image="images/thor.jpg">
-                            First Robotics: Charged Up
-                        </a>
-                    </h3>
-                    <p>Implemented reflective strip distance tracking, designed autonomous sequences winning Autonomous
-                        Award.</p>
-                </div>
-                <!-- frc 2022 -->
-                <div class="timeline-entry">
-                    <span class="timeline-date">
-                        <span class="timeline-month">March</span>
-                        <span class="timeline-year">2022</span>
-                    </span>
-                    <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
-                        <a href="projects/frc2022.html" class="link-hover-effect" data-image="images/snoopy.jpg">
-                            First Robotics: Rapid React
-                        </a>
-                    </h3>
-                    <p>Implemented object detection algorithm, designed camera to robot pipeline.</p>
-                </div>
+                    <p>Designing custom PCBs for Demo Nights</p>
+                </div> -->
+            <!-- PantryPal -->
+            <div class="timeline-entry">
+                <span class="timeline-date">
+                    <span class="timeline-month">September</span>
+                    <span class="timeline-year">2025</span>
+                </span>
+                <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
+                    <a href="projects/pantrypal.html" class="link-hover-effect" data-image="images/gt_hacking.jpg">
+                        PantryPal || HackGT12
+                    </a>
+                </h3>
+                <p>Created PantryPal, an app integrates an MCP server, Firebase, and the OpenAI API to generate
+                    personalized grocery lists and recipes based on nutrition and budgeting preferences.</p>
             </div>
+            <!-- DIY Eyetracker -->
+            <div class="timeline-entry">
+                <span class="timeline-date">
+                    <span class="timeline-month">April</span>
+                    <span class="timeline-year">2025</span>
+                    <span class="timeline-status">In Progress</span>
+                </span>
+                <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
+                    <a href="projects/eyetracker.html" class="link-hover-effect" data-image="images/skills.jpg">
+                        DIY Eyetracker || NAT
+                    </a>
+                </h3>
+                <p>Designed and built a DIY eyetracker using JeVois cameras. Modeled after Pupil Labs 'Pupil Core' Eye
+                    Tracker</p>
+            </div>
+            <!-- FRC 2024 -->
+            <div class="timeline-entry">
+                <span class="timeline-date">
+                    <span class="timeline-month">March</span>
+                    <span class="timeline-year">2024</span>
+                </span>
+                <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
+                    <a href="projects/frc2024.html" class="link-hover-effect" data-image="images/2024frc.jpg">
+                        First Robotics: Crescendo
+                    </a>
+                </h3>
+                <p>Developed code for robotic arm, shooter, climber.</p>
+            </div>
+            <!-- skills -->
+            <div class="timeline-entry">
+                <span class="timeline-date">
+                    <span class="timeline-month">May</span>
+                    <span class="timeline-year">2023</span>
+                </span>
+                <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
+                    <a href="projects/skills.html" class="link-hover-effect" data-image="images/skills.jpg">
+                        Alberta Skills Robotics
+                    </a>
+                </h3>
+                <p>Developed a mechanum drivetrain and shooting mechanism for the 2023 Alberta Skills Robotics
+                    Competition</p>
+            </div>
+            <!-- frc 2023 -->
+            <div class="timeline-entry">
+                <span class="timeline-date">
+                    <span class="timeline-month">March</span>
+                    <span class="timeline-year">2023</span>
+                </span>
+                <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
+                    <a href="projects/frc2023.html" class="link-hover-effect" data-image="images/thor.jpg">
+                        First Robotics: Charged Up
+                    </a>
+                </h3>
+                <p>Implemented reflective strip distance tracking, designed autonomous sequences winning Autonomous
+                    Award.</p>
+            </div>
+            <!-- frc 2022 -->
+            <div class="timeline-entry">
+                <span class="timeline-date">
+                    <span class="timeline-month">March</span>
+                    <span class="timeline-year">2022</span>
+                </span>
+                <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
+                    <a href="projects/frc2022.html" class="link-hover-effect" data-image="images/snoopy.jpg">
+                        First Robotics: Rapid React
+                    </a>
+                </h3>
+                <p>Implemented object detection algorithm, designed camera to robot pipeline.</p>
+            </div>
+        </div>
 
-            <!-- Centralized container for the image display -->
-            <div class="image-display-container hidden sm:flex">
-                <!-- New content wrapper to handle absolute positioning -->
-                <div class="image-content">
-                    <img id="display-image" src="" alt="Image will appear here on hover">
-                    <span id="default-text">Hover over a project!</span>
-                </div>
+        <!-- Centralized container for the image display -->
+        <div class="image-display-container hidden sm:flex">
+            <!-- New content wrapper to handle absolute positioning -->
+            <div class="image-content">
+                <img id="display-image" src="" alt="Image will appear here on hover">
+                <span id="default-text">Hover over a project!</span>
             </div>
+        </div>
         </div>
     </section>
 
-    <section id="upcoming" class="section">
+
+    <!-- upcoming Section -->
+    <!-- <section id="upcoming" class="section">
         <h2 style="font-size: 2.5em; font-family: 'Orbitron', sans-serif; color: #ff00c8;">Upcoming Events</h2>
         <div class="timeline">
             <div class="timeline-entry">
@@ -526,7 +545,7 @@
                 <p>Designing custom PCBs for Demo Nights</p>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Updated Contact Section with social links and new button style -->
     <section id="contact" class="section text-center">
