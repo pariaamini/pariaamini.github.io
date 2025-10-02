@@ -145,46 +145,35 @@
     <div class="border-t border-[#444]"></div>
 
     <section class="section">
-        <!-- Third Block: Reflection and Image 2 -->
-            <div>
-                <h2>Reflection</h2>
-                <div class="project-details">
-                    <p>hackathon experience</p>
+        <h2>Project Media</h2>
+        <!-- UPDATED LAYOUT: Grid system reconfigured for 1 landscape image (top) and 2 portrait images (bottom) -->
+        <!-- The container uses a grid with two equal columns (sm:grid-cols-2) and a 1/2 column gap (gap-8) -->
+        <div class="project-gallery grid grid-cols-1 sm:grid-cols-2 gap-8 items-start">
+
+            <!-- 1. Hackathon Session (Now Landscape, Spans 2 Columns, Placed at the top) -->
+            <div class="sm:col-span-2 flex flex-col items-center justify-start mb-4">
+                <div class="w-full max-w-4xl"> 
+                    <img src="images/gt_hacking.jpg" alt="Team members working on the project during the Hackathon session."
+                        class="project-gallery-image rounded-lg w-full h-auto object-cover">
+                    <p class="text-sm mt-2 text-gray-400 text-center">Hackathon Session (Team Working)</p>
                 </div>
             </div>
-
-        </div>
-    </section>
-
-    <!-- Separator -->
-    <div class="border-t border-[#444]"></div>
-
-    <div class="project-gallery grid grid-cols-1 sm:grid-cols-2 gap-8 items-start">
-
-            <!-- Portrait Image 1: Campus View -->
+            
+            <!-- 2. Campus View (Portrait, Left Column) -->
             <div class="flex flex-col items-center justify-start">
-                <img src="images/gt_building.jpg" alt="Georgia Tech Campus"
-                    class="project-gallery-image rounded-lg w-full h-auto object-cover max-h-96">
+                <img src="images/gt_building.jpg" alt="Portrait view of the Georgia Tech Campus."
+                    class="project-gallery-image rounded-lg w-full h-auto object-cover max-h-[480px]">
                 <p class="text-sm mt-2 text-gray-400 text-center">Campus View</p>
             </div>
 
-            <!-- Portrait Image 2: App Screen Mockup (center image in your screenshot) -->
+            <!-- 3. Data Visualization (Portrait, Right Column) -->
             <div class="flex flex-col items-center justify-start">
-                <img src="images/gt_hacking.jpg" alt="Placeholder for App Screen 1"
-                    class="project-gallery-image rounded-lg w-full h-auto object-cover max-h-96">
-                <p class="text-sm mt-2 text-gray-400 text-center">Hackathon Session</p>
-            </div>
-            
-            <!-- Landscape Image 3: Data Visualization (this spans both columns) -->
-            <div class="sm:col-span-2 flex flex-col items-center justify-start mt-4">
-                <!-- Using max-w-2xl to make it overall smaller and centered on larger screens -->
-                <div class="w-full max-w-2xl"> 
-                    <img src="images/gt_sky.jpg" alt="Placeholder for Data View"
-                        class="project-gallery-image rounded-lg w-full h-auto object-cover">
-                    <p class="text-sm mt-2 text-gray-400 text-center">Data Visualization</p>
-                </div>
+                <img src="images/gt_sky.jpg" alt="Portrait view of a data visualization screen."
+                    class="project-gallery-image rounded-lg w-full h-auto object-cover max-h-[480px]">
+                <p class="text-sm mt-2 text-gray-400 text-center">Data Visualization</p>
             </div>
         </div>
+    </section>
     <footer>
         &copy; 2025 Paria Amini. All rights reserved.
     </footer>
