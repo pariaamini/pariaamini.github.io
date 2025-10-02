@@ -1,5 +1,6 @@
 <!DOCTYPE ahtml>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,7 +26,7 @@
             display: flex;
             justify-content: center;
             gap: 2em;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         /* Removed the !important to allow the hover color to work */
@@ -34,12 +35,13 @@
             text-decoration: none;
             font-family: 'Orbitron', sans-serif;
             font-weight: bold;
-            transition: color 0.3s ease, text-shadow 0.3s ease; 
+            transition: color 0.3s ease, text-shadow 0.3s ease;
         }
 
         nav a:hover {
             color: #ff00c8;
-            text-shadow: 0 0 8px #ff00c8; /* Adds the pink glow effect */
+            text-shadow: 0 0 8px #ff00c8;
+            /* Adds the pink glow effect */
         }
 
         header {
@@ -73,13 +75,16 @@
             padding-left: 1em;
             position: relative;
             animation: fadeIn 1s ease-in;
-            width: 100%; /* Ensure it takes up available width */
-            align-self: flex-start; /* This is the key fix to prevent the line from stretching */
+            width: 100%;
+            /* Ensure it takes up available width */
+            align-self: flex-start;
+            /* This is the key fix to prevent the line from stretching */
         }
 
         /* Container for each individual project */
         .timeline-entry {
-            margin-bottom: 1em; /* Reduced space between projects */
+            margin-bottom: 1em;
+            /* Reduced space between projects */
             transition: transform 0.3s ease;
             position: relative;
         }
@@ -91,14 +96,15 @@
         /* Desktop styles for dates */
         .timeline-date {
             position: absolute;
-            left: -10em; /* Position to the left for desktop */
+            left: -10em;
+            /* Position to the left for desktop */
             top: 0;
             width: 8em;
             text-align: right;
             color: #ff00c8;
             font-family: 'Orbitron', sans-serif;
         }
-        
+
         .timeline-month {
             display: block;
             font-size: 1.2em;
@@ -112,25 +118,33 @@
 
         /* Style for the centralized image container */
         .image-display-container {
-            flex-shrink: 0; /* Prevents the image container from shrinking */
-            width: 400px; /* Fixed width for desktop */
-            height: 350px; /* Fixed height for consistency */
-            display: flex; /* Using flexbox to center the content */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
+            flex-shrink: 0;
+            /* Prevents the image container from shrinking */
+            width: 400px;
+            /* Fixed width for desktop */
+            height: 350px;
+            /* Fixed height for consistency */
+            display: flex;
+            /* Using flexbox to center the content */
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            /* Center vertically */
             overflow: hidden;
             background-color: #1a1f2b;
             border-radius: 10px;
             transition: box-shadow 0.3s ease, border-color 0.3s ease;
-            box-shadow: 0 5px 25px rgba(0, 255, 231, 0.6); /* Always has a shadow */
-            border: 3px solid #00ffe7; /* Always has a border */
+            box-shadow: 0 5px 25px rgba(0, 255, 231, 0.6);
+            /* Always has a shadow */
+            border: 3px solid #00ffe7;
+            /* Always has a border */
             position: sticky;
             top: 20em;
             /* Using flexbox auto margin to push it to the right */
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         /* The active class is no longer needed but we will leave it just in case */
         .image-display-container.active {
             box-shadow: 0 5px 25px rgba(0, 255, 231, 0.6);
@@ -151,7 +165,8 @@
         #display-image {
             transition: opacity var(--transition-duration) ease-in-out;
             opacity: 0;
-            position: absolute; /* Positioned to overlap the text */
+            position: absolute;
+            /* Positioned to overlap the text */
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -159,14 +174,16 @@
 
         /* Style for the default text */
         #default-text {
-            color: #00ffe7; /* Updated to match the blue theme */
+            color: #00ffe7;
+            /* Updated to match the blue theme */
             font-family: 'Orbitron', sans-serif;
             font-size: 1.2em;
             text-align: center;
             padding: 1em;
             transition: opacity var(--transition-duration) ease-in-out;
             opacity: 1;
-            position: absolute; /* Positioned to overlap the image */
+            position: absolute;
+            /* Positioned to overlap the image */
         }
 
         ul {
@@ -187,9 +204,40 @@
             border-top: 2px solid #00ffe7;
         }
 
+        /* New CSS for the contact button */
+        .email-button {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            background-color: #00ffe7;
+            color: #0f111a;
+            box-shadow: 0 0 10px #00ffe7, 0 0 20px #00ffe7;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
+        }
+        
+        .email-button:hover {
+            background-color: #ff00c8;
+            color: #0f111a;
+            box-shadow: 0 0 15px #ff00c8, 0 0 30px #ff00c8;
+            transform: translateY(-2px);
+        }
+        /* End new CSS */
+
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Mobile Styles */
@@ -202,18 +250,22 @@
                 margin-bottom: 0.5em;
                 display: block;
             }
+
             .timeline-year {
                 margin-top: 0;
                 display: inline;
             }
+
             .timeline-month {
                 display: inline;
             }
+
             /* Stack timeline and image display on mobile */
             .project-timeline-container {
                 flex-direction: column;
                 gap: 1.5em;
             }
+
             .image-display-container {
                 width: 100%;
                 height: 200px;
@@ -238,6 +290,7 @@
         }
     </style>
 </head>
+
 <body>
     <nav>
         <a href="#home">Home</a>
@@ -255,24 +308,32 @@
 
     <section id="about" class="section flex flex-col md:flex-row items-center gap-8">
         <div class="flex-shrink-0 w-full md:w-1/3">
-            <img src="images/headshot.jpg" alt="A photo of Paria Amini" class="rounded-lg shadow-md w-full h-auto object-cover border-2 border-[#00ffe7]">
+            <img src="images/headshot.jpg" alt="A photo of Paria Amini"
+                class="rounded-lg shadow-md w-full h-auto object-cover border-2 border-[#00ffe7]">
         </div>
         <div class="w-full md:w-2/3">
-            <h2 style="font-size: 2.5em; font-family: 'Orbitron', sans-serif; color: #ff00c8; border-bottom: 1px solid #444; padding-bottom: 0.1em;">About Me</h2>
-            <p>Hi! I'm Paria, a second-year Computer Engineering student with a passion for bridging hardware and software. I'm very passionate about computer vision, autonomous systems.
-            Through four years of experience in robotics and programming, I've worked extensively with Python, Java, Raspberry Pi, and various cameras.
-           As a Hardware Associate at The Network of Applied Technologies, I develop innovative biotech projects and actively volunteer at tech events. </p>
+            <h2
+                style="font-size: 2.5em; font-family: 'Orbitron', sans-serif; color: #ff00c8; border-bottom: 1px solid #444; padding-bottom: 0.1em;">
+                About Me</h2>
+            <p>Hi! I'm Paria, a second-year Computer Engineering student with a passion for bridging hardware and
+                software. I'm very passionate about computer vision, autonomous systems.
+                Through four years of experience in robotics and programming, I've worked extensively with Python, Java,
+                Raspberry Pi, and various cameras.
+                As a Hardware Associate at The Network of Applied Technologies, I develop innovative biotech projects
+                and actively volunteer at tech events. </p>
 
         </div>
     </section>
 
     <section id="skills" class="section">
-        <h2 style="font-size: 2.5em; font-family: 'Orbitron', sans-serif; color: #ff00c8; padding-bottom: 0.1em;">Skills</h2>
+        <h2 style="font-size: 2.5em; font-family: 'Orbitron', sans-serif; color: #ff00c8; padding-bottom: 0.1em;">Skills
+        </h2>
         <!-- No more big container, just the grid directly -->
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <!-- Programming Languages -->
             <div class="skills-column">
-                <h3 style="font-size: 1.25em; font-family: 'Orbitron', sans-serif; color: #00ffe7;">Programming Languages</h3>
+                <h3 style="font-size: 1.25em; font-family: 'Orbitron', sans-serif; color: #00ffe7;">Programming
+                    Languages</h3>
                 <ul class="list-none p-0 mt-2 text-sm">
                     <li class="flex items-center gap-2 mb-1">C++</li>
                     <li class="flex items-center gap-2 mb-1">Python</li>
@@ -284,7 +345,8 @@
             </div>
             <!-- Robotics & Hardware -->
             <div class="skills-column">
-                <h3 style="font-size: 1.25em; font-family: 'Orbitron', sans-serif; color: #00ffe7;">Robotics & Hardware</h3>
+                <h3 style="font-size: 1.25em; font-family: 'Orbitron', sans-serif; color: #00ffe7;">Robotics & Hardware
+                </h3>
                 <ul class="list-none p-0 mt-2 text-sm">
                     <li class="flex items-center gap-2 mb-1">Raspberry Pi</li>
                     <li class="flex items-center gap-2 mb-1">Computer Vision</li>
@@ -296,7 +358,8 @@
             </div>
             <!-- Tools & Software -->
             <div class="skills-column">
-                <h3 style="font-size: 1.25em; font-family: 'Orbitron', sans-serif; color: #00ffe7;">Tools & Software</h3>
+                <h3 style="font-size: 1.25em; font-family: 'Orbitron', sans-serif; color: #00ffe7;">Tools & Software
+                </h3>
                 <ul class="list-none p-0 mt-2 text-sm">
                     <li class="flex items-center gap-2 mb-1">Git</li>
                     <li class="flex items-center gap-2 mb-1">AutoCAD</li>
@@ -318,13 +381,27 @@
             </div>
         </div>
     </section>
-    
+
     <section id="projects" class="section">
         <!-- Added a bottom margin to the title to create more space -->
-        <h2 class="mb-4" style="font-size: 2.5em; font-family: 'Orbitron', sans-serif; color: #ff00c8;">Project Timeline</h2>
+        <h2 class="mb-4" style="font-size: 2.5em; font-family: 'Orbitron', sans-serif; color: #ff00c8;">Project Timeline
+        </h2>
         <!-- New container to hold the timeline and the image side-by-side -->
         <div class="project-timeline-container flex gap-8">
             <div class="timeline">
+                <!-- PantryPal -->
+                <div class="timeline-entry">
+                    <span class="timeline-date">
+                        <span class="timeline-month">September</span>
+                        <span class="timeline-year">2025</span>
+                    </span>
+                    <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
+                        <a href="projects/skills.html" class="link-hover-effect" data-image="images/skills.jpg">
+                            PantryPal
+                        </a>
+                    </h3>
+                    <p>Created PantryPal, an app integrates an MCP server, Firebase, and the OpenAI API to generate personalized grocery lists and recipes based on nutrition and budgeting preferences..</p>
+                </div>
                 <!-- FRC 2024 -->
                 <div class="timeline-entry">
                     <span class="timeline-date">
@@ -332,10 +409,8 @@
                         <span class="timeline-year">2024</span>
                     </span>
                     <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
-                        <a href="projects/frc2024.html"
-                           class="link-hover-effect"
-                           data-image="images/2024frc.jpg">
-                           First Robotics: Crescendo
+                        <a href="projects/frc2024.html" class="link-hover-effect" data-image="images/2024frc.jpg">
+                            First Robotics: Crescendo
                         </a>
                     </h3>
                     <p>Developed code for robotic arm, shooter, climber.</p>
@@ -347,13 +422,12 @@
                         <span class="timeline-year">2023</span>
                     </span>
                     <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
-                        <a href="projects/skills.html"
-                           class="link-hover-effect"
-                           data-image="images/skills.jpg">
-                           Alberta Skills Robotics
+                        <a href="projects/skills.html" class="link-hover-effect" data-image="images/skills.jpg">
+                            Alberta Skills Robotics
                         </a>
                     </h3>
-                    <p>Developed a mechanum drivetrain and shooting mechanism for the 2023 Alberta Skills Robotics Competition</p>
+                    <p>Developed a mechanum drivetrain and shooting mechanism for the 2023 Alberta Skills Robotics
+                        Competition</p>
                 </div>
                 <!-- frc 2023 -->
                 <div class="timeline-entry">
@@ -362,13 +436,12 @@
                         <span class="timeline-year">2023</span>
                     </span>
                     <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
-                        <a href="projects/frc2023.html"
-                           class="link-hover-effect"
-                           data-image="images/thor.jpg">
-                           First Robotics: Charged Up
+                        <a href="projects/frc2023.html" class="link-hover-effect" data-image="images/thor.jpg">
+                            First Robotics: Charged Up
                         </a>
                     </h3>
-                    <p>Implemented reflective strip distance tracking, designed autonomous sequences winning Autonomous Award</p>
+                    <p>Implemented reflective strip distance tracking, designed autonomous sequences winning Autonomous
+                        Award</p>
                 </div>
                 <!-- frc 2022 -->
                 <div class="timeline-entry">
@@ -377,16 +450,14 @@
                         <span class="timeline-year">2022</span>
                     </span>
                     <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
-                        <a href="projects/frc2022.html"
-                           class="link-hover-effect"
-                           data-image="images/snoopy.jpg">
-                           First Robotics: Rapid React
+                        <a href="projects/frc2022.html" class="link-hover-effect" data-image="images/snoopy.jpg">
+                            First Robotics: Rapid React
                         </a>
                     </h3>
                     <p>Implemented object detection algorithm, designed camera to robot pipeline.</p>
                 </div>
             </div>
-            
+
             <!-- Centralized container for the image display -->
             <div class="image-display-container hidden sm:flex">
                 <!-- New content wrapper to handle absolute positioning -->
@@ -407,7 +478,8 @@
                     <span class="timeline-year">2025</span>
                 </span>
                 <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
-                    <a href="#" class="link-hover-effect" data-image="https://placehold.co/600x400/00ffe7/0f111a?text=PCB+Designs">PCB Designs</a>
+                    <a href="#" class="link-hover-effect"
+                        data-image="https://placehold.co/600x400/00ffe7/0f111a?text=PCB+Designs">PCB Designs</a>
                 </h3>
                 <p>Designing custom PCBs for Demo Nights</p>
             </div>
@@ -418,26 +490,27 @@
                     <span class="timeline-year">2025</span>
                 </span>
                 <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
-                    <a href="#" class="link-hover-effect" data-image="https://placehold.co/600x400/ff00c8/0f111a?text=HackGT12">HackGT12</a>
+                    <a href="#" class="link-hover-effect"
+                        data-image="https://placehold.co/600x400/ff00c8/0f111a?text=HackGT12">HackGT12</a>
                 </h3>
                 <p>Attending the HackGT12 Hackathon at Georgia Tech!</p>
             </div>
         </div>
     </section>
-    
-    <!-- Updated Contact Section with social links -->
+
+    <!-- Updated Contact Section with social links and new button style -->
     <section id="contact" class="section text-center">
         <h2 style="font-size: 2.5em; font-family: 'Orbitron', sans-serif; color: #ff00c8;">Contact Me</h2>
         <p class="text-lg mb-8">Feel free to connect with me through the following channels:</p>
-        <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-4">
-            <a href="mailto:paria.amini@gmail.com" class="text-lg text-[#00ffe7] hover:text-[#ff00c8] transition-colors duration-300 transform hover:scale-105">
+        <div class="flex flex-col md:flex-row justify-center items-center gap-6 mt-4">
+            <!-- Updated Email Link to use the new email-button class -->
+            <a href="mailto:paria.amini@gmail.com" class="email-button">
                 Send an Email
             </a>
-            <a href="https://www.linkedin.com/in/paria-amini-48a6aa227/?profileId=ACoAADjgqCoB9l--GuHXgsSbwrnAX1uzUlcaGk0" target="_blank" class="text-lg text-[#00ffe7] hover:text-[#ff00c8] transition-colors duration-300 transform hover:scale-105">
+            <a href="https://www.linkedin.com/in/paria-amini-48a6aa227/?profileId=ACoAADjgqCoB9l--GuHXgsSbwrnAX1uzUlcaGk0"
+                target="_blank"
+                class="text-lg text-[#00ffe7] hover:text-[#ff00c8] transition-colors duration-300 transform hover:scale-105">
                 LinkedIn
-            </a>
-            <a href="https://github.com/pariaamini" target="_blank" class="text-lg text-[#00ffe7] hover:text-[#ff00c8] transition-colors duration-300 transform hover:scale-105">
-                GitHub
             </a>
         </div>
     </section>
@@ -468,11 +541,11 @@
                     link.addEventListener('mouseover', (event) => {
                         // Get the image URL from the custom 'data-image' attribute
                         const imageUrl = event.target.dataset.image;
-                        
+
                         // Set the image source and make it visible
                         displayImage.src = imageUrl;
                         displayImage.style.opacity = '1';
-                        
+
                         // Hide the default text
                         defaultText.style.opacity = '0';
 
@@ -494,26 +567,29 @@
 
             // Add a click event listener to each nav link
             navLinks.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    // Prevent the default anchor link behavior
-                    event.preventDefault();
-                    
+                link.addEventListener('click', function (event) {
                     // Get the ID from the href attribute (e.g., '#about')
                     const targetId = this.getAttribute('href');
-                    
-                    // Find the target section element
-                    const targetSection = document.querySelector(targetId);
-                    
-                    // Check if the target section exists before scrolling
-                    if (targetSection) {
-                        // Use the scrollIntoView method for a smooth scrolling animation
-                        targetSection.scrollIntoView({
-                            behavior: 'smooth'
-                        });
+
+                    // ONLY prevent default and scroll if the link is a local anchor (starts with #)
+                    if (targetId && targetId.startsWith('#')) {
+                        event.preventDefault();
+
+                        // Find the target section element
+                        const targetSection = document.querySelector(targetId);
+
+                        // Check if the target section exists before scrolling
+                        if (targetSection) {
+                            // Use the scrollIntoView method for a smooth scrolling animation
+                            targetSection.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
                     }
                 });
             });
         });
     </script>
 </body>
+
 </html>
