@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PantryPal | Paria Amini</title>
+    <!-- Use Tailwind CSS for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #0f111a;
+            color: #e0e0e0;
+        }
+
+        nav {
+            background: #1a1f2b;
+            padding: 1em 2em;
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        nav a {
+            color: #00ffe7;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff00c8;
+        }
+
+        header {
+            padding: 5em 1em;
+            text-align: center;
+            /* Added background image and overlay */
+            background-image: linear-gradient(rgba(15, 17, 26, 0.6), rgba(15, 17, 26, 0.6)), url('images/charged_up_field.jpg');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 2px solid #00ffe7;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-family: 'Orbitron', sans-serif;
+            color: #00ffe7;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+
+        .section {
+            padding: 3em 1em;
+            max-width: 900px;
+            margin: auto;
+            animation: fadeIn 1s ease-in;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #ff00c8;
+            border-bottom: 1px solid #444;
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        .project-details {
+            line-height: 1.6;
+        }
+
+        .project-details a {
+            color: #00ffe7;
+            text-decoration: underline;
+        }
+
+        .project-details a:hover {
+            text-shadow: 0 0 5px #00ffe7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2em 0;
+            background: #1a1f2b;
+            color: #888;
+            font-size: 0.9em;
+            border-top: 2px solid #00ffe7;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html#home">Home</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#upcoming">Upcoming</a>
+        <a href="index.html#about">About</a>
+    </nav>
+
+    <header>
+        <h1>PantryPal</h1>
+        <p>Nutrition & Budgeting App</p>
+    </header>
+
+    <section class="section">
+        <!-- First Block: Overview and Image 1 -->
+        <div class="flex flex-col md:flex-row items-start gap-8 mb-4">
+            <div class="md:w-1/2">
+                <h2>Overview/Features</h2>
+                <div class="project-details">
+                    <p>This is my project</p>
+                    <p>These are the features of the project</p>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex flex-col items-center justify-center">
+                <img src="images/hackgt12_screen.jpg" alt="A team's robot from the 2023 FRC Charged Up competition." class="rounded-lg shadow-xl w-full">
+                <p class="text-sm mt-2 text-gray-400 text-center">Closing Ceremony!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Separator -->
+    <div class="border-t border-[#444]"></div>
+
+    <section class="section">
+        <!-- Third Block: Reflection and Image 2 -->
+        <div class="flex flex-col md:flex-row items-start gap-8">
+            <div class="md:w-1/2">
+                <h2>Reflection</h2>
+                <div class="project-details">
+                    <p>hackathon experience</p>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex flex-col items-center justify-center">
+                <img src="images/gt_building.jpg" alt="The game field for the 2023 FRC Charged Up competition." class="rounded-lg shadow-xl w-full">
+                <p class="text-sm mt-2 text-gray-400 text-center">Campus</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Paria Amini. All rights reserved.
+    </footer>
+</body>
+</html>
