@@ -103,6 +103,10 @@
             text-align: right;
             color: #ff00c8;
             font-family: 'Orbitron', sans-serif;
+            /* Add flex properties to stack date/status vertically on desktop */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
         }
 
         .timeline-month {
@@ -114,6 +118,20 @@
             display: block;
             font-size: 0.9em;
             margin-top: 0.2em;
+        }
+
+        /* New style for the status indicator */
+        .timeline-status {
+            font-size: 0.75em;
+            color: #00ffe7;
+            margin-top: 0.5em;
+            padding: 2px 4px;
+            border: 1px solid #00ffe7;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            background-color: rgba(0, 255, 231, 0.1); /* Slight background for visibility */
         }
 
         /* Style for the centralized image container */
@@ -248,16 +266,26 @@
                 width: auto;
                 text-align: left;
                 margin-bottom: 0.5em;
-                display: block;
+                display: flex; /* Use flex for mobile to easily align date and status */
+                flex-direction: row;
+                align-items: center;
             }
 
             .timeline-year {
                 margin-top: 0;
                 display: inline;
+                margin-right: 0.5em;
             }
 
             .timeline-month {
                 display: inline;
+                margin-right: 0.5em;
+            }
+
+            /* Make sure status is inline on mobile and remove the top margin */
+            .timeline-status {
+                display: inline-block;
+                margin-top: 0;
             }
 
             /* Stack timeline and image display on mobile */
@@ -407,6 +435,7 @@
                     <span class="timeline-date">
                         <span class="timeline-month">August</span>
                         <span class="timeline-year">2025</span>
+                         <span class="timeline-status">In Progress</span>
                     </span>
                     <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
                         <a href="projects/eyetracker.html" class="link-hover-effect" data-image="images/skills.jpg">
@@ -495,18 +524,6 @@
                         data-image="https://placehold.co/600x400/00ffe7/0f111a?text=PCB+Designs">PCB Designs</a>
                 </h3>
                 <p>Designing custom PCBs for Demo Nights</p>
-            </div>
-
-            <div class="timeline-entry">
-                <span class="timeline-date">
-                    <span class="timeline-month">September</span>
-                    <span class="timeline-year">2025</span>
-                </span>
-                <h3 style="font-size: 1.2em; font-family: 'Roboto', sans-serif; color: #00ffe7;">
-                    <a href="#" class="link-hover-effect"
-                        data-image="https://placehold.co/600x400/ff00c8/0f111a?text=HackGT12">HackGT12</a>
-                </h3>
-                <p>Attending the HackGT12 Hackathon at Georgia Tech!</p>
             </div>
         </div>
     </section>
